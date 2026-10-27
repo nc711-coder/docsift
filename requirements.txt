@@ -6,8 +6,9 @@ Pillow>=11.0
 numpy>=2.0
 opencv-python-headless>=4.10   # straightening photos and scans
 
-# Fields and validation
+# Fields, validation and the AI (Groq's OpenAI-compatible API)
 pydantic>=2.9
+openai>=1.40
 
 # Making the synthetic test documents (samples/generate.py)
 reportlab>=4.2

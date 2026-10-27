@@ -9,10 +9,13 @@ Conventions, so answers compare cleanly:
   money      a number with 2 decimals, no currency sign (1234.5 means $1,234.50)
   dates      YYYY-MM-DD, whatever the document printed ("March 5, 2026" -> 2026-03-05)
   missing    None (null), never "" or "N/A"
+  required   the fields a document can't do without (an invoice's number, total...) still accept None here, so
+             one unreadable value doesn't discard everything else: docsift/validate.py flags it for review
   sensitive  W-9 TINs and card numbers: last 4 digits only, never the full number
 """
 from __future__ import annotations
 
+import datetime as dt
 from datetime import date
 from enum import Enum
 from typing import Literal
@@ -39,10 +42,10 @@ class LineItem(BaseModel):
 
 
 class Invoice(BaseModel):
-    vendor_name: str
+    vendor_name: str | None = None         # required (see above)
     vendor_address: str | None = None
-    invoice_number: str
-    invoice_date: date
+    invoice_number: str | None = None      # required
+    invoice_date: date | None = None       # required
     due_date: date | None = None           # None when the invoice says "due on receipt" or gives no date
     po_number: str | None = None
     bill_to_name: str | None = None
@@ -53,7 +56,7 @@ class Invoice(BaseModel):
     discount: float | None = None          # a positive number: 25.0 means $25 off
     tax: float | None = None
     shipping: float | None = None
-    total: float
+    total: float | None = None             # required
     payment_terms: str | None = None       # "Net 30", "Due on receipt"
 
     @field_validator("subtotal", "discount", "tax", "shipping", "total")
@@ -83,16 +86,16 @@ class ReceiptItem(BaseModel):
 
 
 class Receipt(BaseModel):
-    merchant_name: str
+    merchant_name: str | None = None       # required
     merchant_address: str | None = None
-    date: date
+    date: dt.date | None = None            # required (dt.date: the field's name hides the type)
     time: str | None = None                # 24-hour HH:MM
     items: list[ReceiptItem] = Field(default_factory=list)
     subtotal: float | None = None
     tax: float | None = None
     tax_included: bool = False             # prices already include tax ("incl. tax 0.84")
     tip: float | None = None
-    total: float
+    total: float | None = None             # required
     payment_method: Literal["cash", "visa", "mastercard", "amex", "discover", "debit", "other"] | None = None
     card_last4: str | None = Field(default=None, pattern=r"^\d{4}$")
     category: ExpenseCategory = ExpenseCategory.other    # not printed: judged from the merchant and items
@@ -114,16 +117,20 @@ class TaxClassification(str, Enum):
 
 
 class W9(BaseModel):
-    name: str                              # line 1
+    name: str | None = None                # line 1, required
     business_name: str | None = None       # line 2
     tax_classification: TaxClassification | None = None     # None when no box is checked
     llc_tax_code: Literal["C", "S", "P"] | None = None      # only for LLCs
-    address: str                           # line 5
-    city_state_zip: str                    # line 6
-    tin_type: Literal["SSN", "EIN"]
-    tin_last4: str = Field(pattern=r"^\d{4}$")               # never the full number
-    signed: bool
+    address: str | None = None             # line 5, required
+    city_state_zip: str | None = None      # line 6, required
+    tin_type: Literal["SSN", "EIN"] | None = None             # required
+    tin_last4: str | None = Field(default=None, pattern=r"^\d{4}$")   # required; never the full number
+    signed: bool | None = None             # required
     date_signed: date | None = None
 
+
+REQUIRED = {"invoice": ["vendor_name", "invoice_number", "invoice_date", "total"],
+            "receipt": ["merchant_name", "date", "total"],
+            "w9": ["name", "address", "city_state_zip", "tin_type", "tin_last4", "signed"]}
 
 MODELS: dict[str, type[BaseModel]] = {"invoice": Invoice, "receipt": Receipt, "w9": W9}

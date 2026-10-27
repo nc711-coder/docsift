@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import io
 import os
+import re
 import shutil
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -28,7 +29,12 @@ from PIL import Image, ImageOps
 
 MIN_TEXT_CHARS = 25          # a PDF page with less text than this is a scan
 OCR_DPI = 300
-MIN_WORDS, MIN_CONFIDENCE = 8, 55     # below either, the page isn't trustworthy enough to extract from
+# Below either, the page isn't trustworthy enough to approve without a person. 70: on the test set the worst
+# photo (OCR confidence 64) produced a wrong business name that still looked plausible.
+MIN_WORDS, MIN_CONFIDENCE = 8, 70
+# A word Tesseract scored below this is remembered as "unsure": a value built on it goes to review even when it
+# matches the page (on the test set, "Blvd" read as "Bivd" was copied faithfully by the AI).
+UNSURE_WORD = 80
 IMAGE_TYPES = {".jpg", ".jpeg", ".png", ".tif", ".tiff", ".webp", ".bmp"}
 
 
@@ -40,6 +46,7 @@ class Page:
     confidence: float           # 0-100
     words: int
     notes: list[str] = field(default_factory=list)    # what was done to the image ("page found in photo", ...)
+    unsure: dict[str, float] = field(default_factory=dict)   # OCR words with low confidence -> their score
 
     @property
     def readable(self) -> bool:
@@ -69,6 +76,14 @@ class ReadResult:
     @property
     def readable(self) -> bool:
         return bool(self.pages) and all(p.readable for p in self.pages)
+
+    @property
+    def unsure(self) -> dict[str, float]:
+        out = {}
+        for p in self.pages:
+            for w, c in p.unsure.items():
+                out[w] = min(c, out.get(w, 100.0))
+        return out
 
 
 def read(source: str | Path | bytes, filename: str | None = None) -> ReadResult:
@@ -100,6 +115,9 @@ def _read_pdf(data: bytes) -> ReadResult:
         for i, p in enumerate(pdf.pages):
             text = _tidy(p.extract_text(layout=True) or "")
             if len(text.replace(" ", "").replace("\n", "")) >= MIN_TEXT_CHARS:
+                boxed = _spaced_digits(text)
+                if boxed:
+                    text += "\n" + "\n".join(f"[digits in boxes] {b}" for b in boxed)
                 pages.append(Page(i + 1, text, "text", 100.0, len(text.split())))
                 continue
             rendered = rendered or pdfium.PdfDocument(data)
@@ -160,12 +178,12 @@ def _ocr(img: Image.Image, number: int, photo: bool) -> Page:
     if abs(angle) >= 0.2:
         gray = _rotate(gray, angle)
         notes.append(f"straightened {angle:+.1f} deg")
-    text, conf, words = _tesseract_text(gray)
+    text, conf, words, unsure = _tesseract_text(gray)
     boxed = _boxed_digits(gray)
     if boxed:
         text += "\n" + "\n".join(f"[digits in boxes] {b}" for b in boxed)
         notes.append(f"read {len(boxed)} row(s) of boxed digits")
-    return Page(number, text, "ocr", conf, words, notes)
+    return Page(number, text, "ocr", conf, words, notes, unsure)
 
 
 def _find_page(rgb: np.ndarray) -> np.ndarray | None:
@@ -254,12 +272,14 @@ def _rotate(img: np.ndarray, angle: float, border=255) -> np.ndarray:
     return cv2.warpAffine(img, M, (w, h), flags=cv2.INTER_LINEAR, borderValue=border)
 
 
-def _tesseract_text(gray: np.ndarray) -> tuple[str, float, int]:
-    """OCR, then rebuild each line keeping wide gaps as 3 spaces, so table columns stay apart."""
+def _tesseract_text(gray: np.ndarray) -> tuple[str, float, int, dict]:
+    """OCR, then rebuild each line keeping wide gaps as 3 spaces, so table columns stay apart. Also returns the
+    words Tesseract was unsure of (lower-cased letters and digits only -> confidence)."""
     tess = _tesseract()
     d = tess.image_to_data(gray, config="--oem 1 --psm 6", output_type=tess.Output.DICT)
     lines: dict[tuple, list] = {}
     total, weight = 0.0, 0
+    unsure: dict[str, float] = {}
     for i, word in enumerate(d["text"]):
         word = word.strip()
         conf = float(d["conf"][i])
@@ -269,6 +289,9 @@ def _tesseract_text(gray: np.ndarray) -> tuple[str, float, int]:
         lines.setdefault(key, []).append((d["left"][i], d["width"][i], d["height"][i], word))
         total += conf * len(word)
         weight += len(word)
+        key_word = re.sub(r"[^0-9a-z]", "", word.lower())
+        if conf < UNSURE_WORD and len(key_word) >= 3:
+            unsure[key_word] = min(conf, unsure.get(key_word, 100.0))
     out = []
     for key in sorted(lines):                       # Tesseract's reading order
         words = sorted(lines[key])
@@ -281,7 +304,24 @@ def _tesseract_text(gray: np.ndarray) -> tuple[str, float, int]:
             prev_end = left + width
         out.append(line)
     words_n = sum(len(v) for v in lines.values())
-    return "\n".join(out), round(total / weight, 1) if weight else 0.0, words_n
+    return "\n".join(out), round(total / weight, 1) if weight else 0.0, words_n, unsure
+
+
+def box_layout(groups: list[str]) -> str:
+    """Name the layout of a tax ID's boxes: 3+2+4 digits is an SSN, 2+7 an EIN."""
+    sizes = "+".join(str(len(g)) for g in groups)
+    kind = {"3+2+4": "SSN layout", "2+7": "EIN layout"}.get(sizes)
+    return f"{' '.join(groups)} ({sizes} digits{': ' + kind if kind else ''})"
+
+
+def _spaced_digits(text: str) -> list[str]:
+    """A PDF's own text gives digits typed in boxes as "0 0 - 5 3 5 8 4  6 6": join each run back up."""
+    out = []
+    for m in re.finditer(r"(?<![\d])(?:\d[ \t]+|\d[ \t]*-[ \t]*){6,}\d(?![\d])", text):
+        groups = [re.sub(r"\D", "", g) for g in m.group(0).split("-")]
+        if all(groups) and sum(map(len, groups)) >= 7:
+            out.append(box_layout(groups))
+    return out
 
 
 def _boxed_digits(gray: np.ndarray) -> list[str]:
@@ -331,7 +371,7 @@ def _boxed_digits(gray: np.ndarray) -> list[str]:
         img = cv2.copyMakeBorder(np.hstack(strip), 20, 20, 20, 20, cv2.BORDER_CONSTANT, value=255)
         digits = tess.image_to_string(img, config="--oem 1 --psm 7 -c tessedit_char_whitelist=0123456789").strip()
         if sum(ch.isdigit() for ch in digits) >= len(row) / 2:      # mostly empty: checkboxes, not digits
-            out.append(" ".join(digits.split()))
+            out.append(box_layout(digits.split()))
     return out
 
 

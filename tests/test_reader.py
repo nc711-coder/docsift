@@ -119,4 +119,4 @@ def test_digits_in_boxes_are_read():
             d.text((x + 18, 160), ch, fill=0, font=font)
             x += 64
         x += 50
-    assert _boxed_digits(np.asarray(img)) == ["987 65 4321"]
+    assert _boxed_digits(np.asarray(img)) == ["987 65 4321 (3+2+4 digits: SSN layout)"]
