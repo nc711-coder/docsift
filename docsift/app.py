@@ -31,6 +31,7 @@ from fastapi.responses import Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, ValidationError
 
+from .alerts import alerter
 from .extract import coerce
 from .llm import LLMError, load_dotenv
 from .notify import SHEETS, notify, sheet_row
@@ -129,14 +130,22 @@ def process_and_save(data: bytes, filename: str, request: Request, sample: str |
         result = process(data, filename, llm=_llm()).to_dict()
     except LLMError as e:
         log.error("AI failed: %s", e)
+        alerter.report(e, filename)
         raise HTTPException(503, "The AI service isn't available right now. Please try again in a minute.")
     except RuntimeError as e:                          # Tesseract missing
         log.error("reader failed: %s", e)
-        raise HTTPException(500, str(e))
-    except Exception:
+        alerter.report(e, filename)
+        raise HTTPException(500, "Scans and photos can't be read right now. Please try a PDF, or try again later.")
+    except Exception as e:
         log.exception("processing %s failed", filename)
+        alerter.report(e, filename)
         raise HTTPException(500, "Something went wrong reading that document. Please try another one.")
-    dup = store.duplicate_of(result["type"], result.get("fields"))
+    try:
+        dup = store.duplicate_of(result["type"], result.get("fields"))
+    except Exception as e:                             # the database is down: say so, and tell the owner
+        log.exception("database failed")
+        alerter.report(e, filename, "database")
+        raise HTTPException(503, "The document store isn't available right now. Please try again in a few minutes.")
     if dup:
         why = "possible duplicate: a document with the same " + \
               ("vendor and invoice number" if result["type"] == "invoice" else "merchant, date and total") + \

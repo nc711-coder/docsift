@@ -1,11 +1,14 @@
 # DocSift: AI document extraction
 
+**Live demo: https://docsift-288399809809.us-west1.run.app** (try a sample; the first load after a pause takes
+~20 s to wake up)
+
 Reads invoices, receipts and W-9 forms (text PDFs, scans or phone photos), extracts their fields into checked,
 structured data, and sends anything doubtful to a person for review instead of guessing.
 
 > Work in progress. Day 1: test set and reader. Day 2: classify, extract, validate, review decision.
 > Day 3: the web app (upload, review, approve), storage, Google Sheet and review emails via n8n.
-> Next: the live demo.
+> Day 4: live on Cloud Run ([DEPLOY.md](DEPLOY.md)), with failure alert emails.
 
 ```
 document ─▶ read (PDF text or OCR) ─▶ classify (rules, AI if unsure) ─▶ extract (AI → schema)
@@ -135,6 +138,9 @@ uvicorn docsift.app:app --reload     # then open http://127.0.0.1:8000
   page. Setup: [automation/README.md](automation/README.md).
 - **Public-demo limits:** uploads per visitor per hour and per day, plain-English errors ("The AI service isn't
   available right now"), never a stack trace.
+- **Failure alerts:** when a visitor gets an error, the owner gets an email saying what broke (Groq down, key
+  rejected, database paused, a bug), the likely fix and where in the code; at most one per kind of problem
+  every 30 minutes.
 
 ## The test set
 
@@ -188,6 +194,8 @@ docsift/llm.py         Groq client: structured JSON output, fallback model, plai
 docsift/app.py         FastAPI: upload, samples, review, check, approve; limits
 docsift/store.py       Postgres (Supabase) or in-memory storage; duplicates; originals deleted after 24 h
 docsift/notify.py      events to n8n: the Sheet row per type, review emails
+docsift/alerts.py      failure emails: what broke, the likely fix, throttled
+Dockerfile, DEPLOY.md  the Cloud Run image (with Tesseract) and the deploy guide
 web/                   the page: upload, samples, review (no framework, no build step)
 automation/            n8n workflow (JSON + generator), Sheet headers, setup guide
 samples/generate.py    makes the 60 test documents and their answers

@@ -158,3 +158,37 @@ def test_postgres_store_round_trip():
     s._run("update docsift.documents set created_at = now() - interval '2 days' where id = %s", (a,))
     assert s.purge_files() == 1 and s.file(a) is None and s.get(a)["fields"]
     assert s.get("not-a-uuid") is None
+
+
+def test_failure_alerts_are_explained_and_throttled():
+    from docsift.alerts import Alerter, explain
+    from docsift.llm import LLMError
+    assert explain(LLMError("Groq rejected the API key. Check GROQ_API_KEY in .env."))[0] == "api_key"
+    assert explain(LLMError("Groq didn't answer (APITimeoutError)"))[0] == "ai_down"
+    assert explain(RuntimeError("Tesseract isn't installed"))[0] == "ocr"
+    sent, now = [], [0.0]
+    a = Alerter(every_minutes=30, clock=lambda: now[0], send=lambda e, d: sent.append(d))
+    down = LLMError("Groq didn't answer")
+    assert a.report(down, "a.pdf") and not a.report(down, "b.pdf") and not a.report(down, "c.pdf")
+    now[0] += 31 * 60
+    assert a.report(down, "d.pdf") and sent[-1]["similar_failures_not_emailed"] == 2 and "groqstatus" in sent[0]["fix"]
+
+
+def test_an_ai_outage_emails_the_owner(client, monkeypatch):
+    from docsift.alerts import Alerter
+    from docsift.llm import LLMError
+    sent = []
+    monkeypatch.setattr(A, "alerter", Alerter(send=lambda e, d: sent.append((e, d))))
+
+    class Down:
+        def json(self, *a, **k):
+            raise LLMError("Groq didn't answer (APITimeoutError)")
+    A.llm = Down()
+    assert client.post("/api/samples/inv-01").status_code == 503
+    assert sent[0][0] == "docsift.error" and sent[0][1]["kind"] == "ai_down" and sent[0][1]["filename"] == "inv-01.pdf"
+
+
+def test_workflow_has_three_branches():
+    wf = json.loads((ROOT / "automation" / "n8n_docsift.json").read_text(encoding="utf-8"))
+    assert len(wf["connections"]["Which event?"]["main"]) == 3
+    assert {"Add to the Sheet", "Email the reviewer", "Email the owner (failure)"} <= {n["name"] for n in wf["nodes"]}

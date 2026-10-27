@@ -42,6 +42,12 @@
               "name": "sheet_url",
               "value": "https://docs.google.com/spreadsheets/d/PASTE-YOUR-SHEET-ID/edit",
               "type": "string"
+            },
+            {
+              "id": "55cb9ec8-88a7-580b-a070-6041fa7fe5cf",
+              "name": "alert_email",
+              "value": "you@example.com",
+              "type": "string"
             }
           ]
         },
@@ -108,6 +114,30 @@
               },
               "renameOutput": true,
               "outputKey": "Needs review"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "1b483e33-277d-5c52-9dd7-6ba578d0c71b",
+                    "leftValue": "={{ $('DocSift events').item.json.body.event }}",
+                    "rightValue": "docsift.error",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Failure"
             }
           ]
         },
@@ -194,6 +224,62 @@
       }
     },
     {
+      "id": "3fcd0af9-d764-5391-b4e9-c9b72bd4540f",
+      "name": "Failure email",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        700,
+        640
+      ],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "00b24214-cfca-5eae-aff7-c7c63dc359b6",
+              "name": "to",
+              "value": "={{ $('Settings').item.json.alert_email }}",
+              "type": "string"
+            },
+            {
+              "id": "2d3ad686-0d6d-5869-955b-ff2ec17262f2",
+              "name": "subject",
+              "value": "=DocSift failed: {{ $('DocSift events').item.json.body.data.headline }}",
+              "type": "string"
+            },
+            {
+              "id": "c7323e76-bd6c-5a95-9de9-5427129ffff4",
+              "name": "text",
+              "value": "=A visitor got an error instead of a result.\n\nWhat happened:  {{ $('DocSift events').item.json.body.data.headline }}\nWhen:  {{ $('DocSift events').item.json.body.data.when }}\nLikely fix:  {{ $('DocSift events').item.json.body.data.fix }}\nFile:  {{ $('DocSift events').item.json.body.data.filename || '-' }}\n{{ $('DocSift events').item.json.body.data.similar_failures_not_emailed ? 'Also ' + $('DocSift events').item.json.body.data.similar_failures_not_emailed + ' similar failure(s) since the last email.' : '' }}\n\nError:\n{{ $('DocSift events').item.json.body.data.error }}\n\nWhere:\n{{ $('DocSift events').item.json.body.data.traceback || '-' }}\n\nServer log (PowerShell):\n{{ $('DocSift events').item.json.body.data.logs_command }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": false,
+        "options": {}
+      }
+    },
+    {
+      "id": "06e0bcb0-5e5f-548e-aee3-80d50dd8ff6f",
+      "name": "Email the owner (failure)",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        940,
+        640
+      ],
+      "webhookId": "de584c29-f4e9-595f-a40a-acf852272071",
+      "parameters": {
+        "sendTo": "={{ $json.to }}",
+        "subject": "={{ $json.subject }}",
+        "emailType": "text",
+        "message": "={{ $json.text }}",
+        "options": {
+          "appendAttribution": false
+        }
+      }
+    },
+    {
       "id": "156e264d-097e-513e-a954-a0c93d73e786",
       "name": "Email the reviewer",
       "type": "n8n-nodes-base.gmail",
@@ -252,6 +338,13 @@
             "type": "main",
             "index": 0
           }
+        ],
+        [
+          {
+            "node": "Failure email",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
@@ -271,6 +364,17 @@
         [
           {
             "node": "Email the reviewer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Failure email": {
+      "main": [
+        [
+          {
+            "node": "Email the owner (failure)",
             "type": "main",
             "index": 0
           }

@@ -22,9 +22,10 @@ These steps reuse the n8n and Google sign-in you set up for Clinic Concierge (it
 ## 2. The workflow
 
 1. In n8n: **Create workflow → ⋯ → Import from File…** and pick `automation/n8n_docsift.json`.
-2. **Settings** step: `review_email` (where "needs a look" emails go) and `sheet_url` (the Sheet's address).
+2. **Settings** step: `review_email` (where "needs a look" emails go), `sheet_url` (the Sheet's address) and
+   `alert_email` (who hears when the app fails for a visitor).
 3. **Add to the Sheet**: choose your existing **Google Sheets** credential.
-4. **Email the reviewer**: choose your existing **Gmail** credential.
+4. **Email the reviewer** and **Email the owner (failure)**: choose your existing **Gmail** credential.
 5. **DocSift events**: under Header Auth choose your existing **X-Webhook-Secret** credential (the same secret as
    Clinic Concierge is fine), and copy the **Production URL** (`.../webhook/docsift`).
 6. **Ctrl+S**, then **Publish**.
@@ -37,8 +38,9 @@ EVENT_WEBHOOK_URL=https://n8n-XXXX.us-west1.run.app/webhook/docsift
 EVENT_WEBHOOK_SECRET=the-same-secret
 ```
 
-Test without the app: `python -m docsift.notify approved` sends a sample Sheet row, and
-`python -m docsift.notify review` a sample review email.
+Test without the app: `python -m docsift.notify approved` sends a sample Sheet row,
+`python -m docsift.notify review` a sample review email, and `python -m docsift.notify failure` a sample
+failure alert (the email you get when a visitor hits an error).
 
 ## Troubleshooting
 

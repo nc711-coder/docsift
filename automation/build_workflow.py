@@ -3,7 +3,8 @@
 
     DocSift events ─▶ Settings ─▶ Which event?
                                    ├─ approved     ─▶ Sheet row (code) ─▶ append to the tab named in the event
-                                   └─ needs review ─▶ Review email ─▶ Gmail
+                                   ├─ needs review ─▶ Review email ─▶ Gmail
+                                   └─ failure      ─▶ Failure email ─▶ Gmail (to you)
 """
 import json
 import uuid
@@ -40,11 +41,13 @@ nodes = [
     setnode("Settings", [220, 300], {
         "review_email": "you@example.com",                                         # <- who reviews documents
         "sheet_url": "https://docs.google.com/spreadsheets/d/PASTE-YOUR-SHEET-ID/edit",   # <- your Google Sheet
+        "alert_email": "you@example.com",                                          # <- who hears when it fails
     }),
     {"id": uid("switch"), "name": "Which event?", "type": "n8n-nodes-base.switch", "typeVersion": 3.2,
      "position": [440, 300],
      "parameters": {"rules": {"values": [rule("Approved", "document.approved"),
-                                         rule("Needs review", "document.needs_review")]}, "options": {}}},
+                                         rule("Needs review", "document.needs_review"),
+                                         rule("Failure", "docsift.error")]}, "options": {}}},
     {"id": uid("row"), "name": "Sheet row", "type": "n8n-nodes-base.code", "typeVersion": 2, "position": [700, 180],
      # the app sends the row ready-made (columns per document type, in order): pass it on as the item
      "parameters": {"jsCode": "return [{ json: $('DocSift events').first().json.body.data.row }];"}},
@@ -64,6 +67,20 @@ nodes = [
                  f"Why:\n{{{{ {D}.reasons.map(r => '- ' + r).join('\\n') }}}}\n\n"
                  f"Review and approve it here: {{{{ {D}.link }}}}"),
     }),
+    setnode("Failure email", [700, 640], {
+        "to": "={{ " + SETTING + ".alert_email }}",
+        "subject": f"=DocSift failed: {{{{ {D}.headline }}}}",
+        "text": ("=A visitor got an error instead of a result.\n\n"
+                 f"What happened:  {{{{ {D}.headline }}}}\nWhen:  {{{{ {D}.when }}}}\nLikely fix:  {{{{ {D}.fix }}}}\n"
+                 f"File:  {{{{ {D}.filename || '-' }}}}\n"
+                 f"{{{{ {D}.similar_failures_not_emailed ? 'Also ' + {D}.similar_failures_not_emailed + ' similar failure(s) since the last email.' : '' }}}}\n\n"
+                 f"Error:\n{{{{ {D}.error }}}}\n\nWhere:\n{{{{ {D}.traceback || '-' }}}}\n\n"
+                 f"Server log (PowerShell):\n{{{{ {D}.logs_command }}}}"),
+    }),
+    {"id": uid("gmail-alert"), "name": "Email the owner (failure)", "type": "n8n-nodes-base.gmail", "typeVersion": 2.1,
+     "position": [940, 640], "webhookId": uid("gmailalerthook"),
+     "parameters": {"sendTo": "={{ $json.to }}", "subject": "={{ $json.subject }}", "emailType": "text",
+                    "message": "={{ $json.text }}", "options": {"appendAttribution": False}}},
     {"id": uid("gmail"), "name": "Email the reviewer", "type": "n8n-nodes-base.gmail", "typeVersion": 2.1,
      "position": [940, 420], "webhookId": uid("gmailhook"),
      "parameters": {"sendTo": "={{ $json.to }}", "subject": "={{ $json.subject }}", "emailType": "text",
@@ -78,9 +95,11 @@ connections = {
     "DocSift events": {"main": link("Settings")},
     "Settings": {"main": link("Which event?")},
     "Which event?": {"main": [[{"node": "Sheet row", "type": "main", "index": 0}],
-                              [{"node": "Review email", "type": "main", "index": 0}]]},
+                              [{"node": "Review email", "type": "main", "index": 0}],
+                              [{"node": "Failure email", "type": "main", "index": 0}]]},
     "Sheet row": {"main": link("Add to the Sheet")},
     "Review email": {"main": link("Email the reviewer")},
+    "Failure email": {"main": link("Email the owner (failure)")},
 }
 workflow = {"name": "DocSift: approved documents to Sheets, reviews by email", "nodes": nodes,
             "connections": connections, "settings": {"executionOrder": "v1", "timezone": "America/New_York"},

@@ -96,7 +96,7 @@ def notify(event: str, payload: dict, *, wait: bool = False) -> int | None:
 
 
 if __name__ == "__main__":
-    # python -m docsift.notify approved | review   -> a sample event, to test the n8n workflow
+    # python -m docsift.notify approved | review | failure   -> a sample event, to test the n8n workflow
     import sys
     from .llm import load_dotenv
     load_dotenv()
@@ -107,7 +107,12 @@ if __name__ == "__main__":
     sample = {"vendor_name": "TEST Brightline IT Services LLC", "invoice_number": "INV-0000", "invoice_date": "2026-10-27",
               "due_date": "2026-11-26", "subtotal": 100.0, "tax": 6.0, "total": 106.0, "payment_terms": "Net 30",
               "line_items": [{"description": "TEST line", "quantity": 1, "unit_price": 100.0, "amount": 100.0}]}
-    if which == "approved":
+    if which == "failure":
+        from .alerts import Alerter
+        sent = []
+        Alerter(send=lambda e, d: sent.append((e, d))).report(RuntimeError("TEST: Groq didn't answer (timeout)"), "TEST.pdf")
+        event, data = sent[0]
+    elif which == "approved":
         event, data = "document.approved", {"document_id": "test", "type": "invoice", "sheet": "Invoices",
                                             "row": sheet_row("invoice", sample, "test", "https://example.com"),
                                             "link": "https://example.com"}
