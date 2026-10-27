@@ -66,7 +66,9 @@ def analyse(r, llm, seconds: dict | None = None) -> Result:
     """Everything after reading (the evals reuse cached reading results through this)."""
     seconds = dict(seconds or {})
     reading = {"method": r.method, "ocr_confidence": r.confidence, "pages": len(r.pages), "readable": r.readable,
-               "warnings": r.warnings, "notes": [n for p in r.pages for n in p.notes]}
+               "warnings": r.warnings, "notes": [n for p in r.pages for n in p.notes],
+               # kept so edits can be re-checked later; long digit runs dropped (they could be part of a tax ID)
+               "unsure": {w: c for w, c in r.unsure.items() if not re.fullmatch(r"\d{5,}", w)}}
 
     t = time.perf_counter()
     c = classify(r.text, llm)

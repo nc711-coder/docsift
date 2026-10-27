@@ -4,7 +4,8 @@ Reads invoices, receipts and W-9 forms (text PDFs, scans or phone photos), extra
 structured data, and sends anything doubtful to a person for review instead of guessing.
 
 > Work in progress. Day 1: test set and reader. Day 2: classify, extract, validate, review decision.
-> Next: a review page + Google Sheet, then the live demo.
+> Day 3: the web app (upload, review, approve), storage, Google Sheet and review emails via n8n.
+> Next: the live demo.
 
 ```
 document ─▶ read (PDF text or OCR) ─▶ classify (rules, AI if unsure) ─▶ extract (AI → schema)
@@ -115,6 +116,26 @@ Third run, final for Day 2 ([report](evals/reports/day2-extraction-gpt-oss-120b.
 Nothing wrong was approved. The price is the review rate on scans and photos: 4 of the 17 reviewed were correct
 ("Ironside" read right but scored 6/100 by Tesseract). The review page (Day 3) is where those take seconds.
 
+## Day 3: the app
+
+```
+uvicorn docsift.app:app --reload     # then open http://127.0.0.1:8000
+```
+
+- **Upload or pick a sample.** PDF, JPG or PNG up to 5 MB and 3 pages; ten one-click samples from the test set.
+- **Review page:** the document on the left, its fields on the right. Each field has a dot (green: found on the
+  page; amber: roughly; red: doubtful) and the reason under it. Line items are an editable table. "Check again"
+  re-runs every check on your edits; **Approve** asks for a second click ("Approve anyway") if something still
+  looks doubtful, so nothing doubtful is approved by accident.
+- **Duplicates:** the same vendor + invoice number (or merchant + date + total) seen before is flagged.
+- **Storage:** Supabase Postgres (its own `docsift` schema) when `DATABASE_URL` is set, in memory otherwise.
+  Original files are deleted after 24 hours; the fields stay. Stored text is masked (no full tax IDs).
+- **n8n:** an approved document becomes a row in the Google Sheet tab for its type (Invoices / Receipts / W-9s;
+  the app builds the row, n8n appends it); one that needs a person becomes an email with a link to its review
+  page. Setup: [automation/README.md](automation/README.md).
+- **Public-demo limits:** uploads per visitor per hour and per day, plain-English errors ("The AI service isn't
+  available right now"), never a stack trace.
+
 ## The test set
 
 `samples/` holds 60 synthetic documents with known answers: 20 invoices (5 layouts, multi-page, discounts, no tax,
@@ -151,6 +172,7 @@ Copy `.env.example` to `.env` and add your Groq key (`GROQ_API_KEY`).
 python -m pytest -q                              # tests (no AI calls)
 python -m docsift.pipeline samples\docs\inv-16.jpg   # one document, end to end
 python -m evals.extraction                       # accuracy on all 60 (about 60 AI calls)
+uvicorn docsift.app:app --reload                 # the app, at http://127.0.0.1:8000
 ```
 
 ## Layout
@@ -163,6 +185,11 @@ docsift/extract.py     the AI fills the schema; tidying, one repair retry, last-
 docsift/validate.py    math, dates, "is it on the page?", confidence per field, review reasons
 docsift/pipeline.py    read -> classify -> extract -> validate; masks tax IDs in everything returned
 docsift/llm.py         Groq client: structured JSON output, fallback model, plain-English errors
+docsift/app.py         FastAPI: upload, samples, review, check, approve; limits
+docsift/store.py       Postgres (Supabase) or in-memory storage; duplicates; originals deleted after 24 h
+docsift/notify.py      events to n8n: the Sheet row per type, review emails
+web/                   the page: upload, samples, review (no framework, no build step)
+automation/            n8n workflow (JSON + generator), Sheet headers, setup guide
 samples/generate.py    makes the 60 test documents and their answers
 evals/reading.py       the reading check; reports in evals/reports/
 evals/extraction.py    the accuracy check (--oracle / --chaos run without the AI)

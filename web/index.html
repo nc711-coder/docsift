@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DocSift: invoices, receipts and W-9s to checked data</title>
+  <meta name="description" content="Upload an invoice, receipt or W-9. AI extracts the fields, code checks every value, and anything doubtful goes to a person.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="#/" aria-label="DocSift home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="3" width="18" height="24" rx="3"/><path d="M10 10h8M10 15h8M10 20h4"/><circle cx="23" cy="22" r="5.5"/><path d="M27 26l3 3"/></svg>
+      <span>DocSift</span>
+    </a>
+    <p class="tag">Invoices, receipts and W-9s → checked data. Anything doubtful goes to a person.</p>
+  </header>
+
+  <main id="app" tabindex="-1"></main>
+
+  <footer class="foot">
+    Demo with synthetic documents. Please don't upload real tax forms, card numbers or personal data.
+    Uploads are deleted after 24 hours. <a href="https://github.com/nc711-coder/docsift">Source on GitHub</a>
+  </footer>
+
+  <template id="home">
+    <section class="intro">
+      <h1>Drop in a document. Get checked data back.</h1>
+      <p>DocSift reads the page (OCR for scans and photos), the AI fills in the fields, and the code checks every
+        value: totals must add up, dates must make sense, and each value must actually be on the page.
+        Clean documents are approved on their own; the rest come here for a quick look.</p>
+    </section>
+
+    <section class="upload card" aria-labelledby="up-h">
+      <h2 id="up-h">Upload</h2>
+      <label class="drop" id="drop">
+        <input type="file" id="file" accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg>
+        <strong>Drop a PDF, JPG or PNG here</strong>
+        <span>or click to choose one · up to 5 MB and 3 pages</span>
+      </label>
+    </section>
+
+    <section class="samples card" aria-labelledby="sm-h">
+      <h2 id="sm-h">Or try a sample</h2>
+      <p class="muted">Synthetic documents from the test set: clean PDFs, scans and phone photos.</p>
+      <div class="sample-grid" id="samples"></div>
+    </section>
+
+    <section class="mine card" aria-labelledby="mine-h" hidden id="mine-wrap">
+      <h2 id="mine-h">Your documents</h2>
+      <ul class="mine-list" id="mine"></ul>
+    </section>
+  </template>
+
+  <template id="busy">
+    <section class="busy card" aria-live="polite">
+      <div class="spinner" aria-hidden="true"></div>
+      <h2>Processing <span id="busy-name"></span></h2>
+      <ol class="steps" id="steps">
+        <li>Reading the page</li>
+        <li>Working out what kind of document it is</li>
+        <li>Extracting the fields</li>
+        <li>Checking every value</li>
+      </ol>
+      <p class="muted">Scans and photos take up to 15 seconds (OCR).</p>
+    </section>
+  </template>
+
+  <template id="review">
+    <section class="review">
+      <div class="review-head">
+        <a href="#/" class="back">← All documents</a>
+        <div class="title-row">
+          <h1 id="r-title"></h1>
+          <span class="badge" id="r-badge"></span>
+        </div>
+        <p class="muted" id="r-meta"></p>
+      </div>
+      <div class="banner" id="r-banner" role="status"></div>
+      <div class="split">
+        <figure class="doc card">
+          <div class="doc-view" id="r-doc"></div>
+          <figcaption class="muted" id="r-read"></figcaption>
+        </figure>
+        <form class="fields card" id="r-form" novalidate>
+          <div id="r-fields"></div>
+          <div class="actions">
+            <p class="legend"><span class="dot good"></span>found on the page <span class="dot mid"></span>roughly
+              <span class="dot bad"></span>doubtful</p>
+            <button type="button" class="btn ghost" id="r-check">Check again</button>
+            <button type="submit" class="btn primary" id="r-approve">Approve</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </template>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <script src="app.js" defer></script>
+</body>
+</html>

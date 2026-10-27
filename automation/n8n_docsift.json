@@ -1,0 +1,290 @@
+{
+  "name": "DocSift: approved documents to Sheets, reviews by email",
+  "nodes": [
+    {
+      "id": "465f50f1-115a-5610-9474-74257ebcbebd",
+      "name": "DocSift events",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        300
+      ],
+      "webhookId": "4f113c8c-d4f1-5c6a-9ecf-c68e2a3eae75",
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "docsift",
+        "authentication": "headerAuth",
+        "responseMode": "lastNode",
+        "options": {}
+      }
+    },
+    {
+      "id": "34fb6c03-7c0d-5361-9564-063ba9bfe3a7",
+      "name": "Settings",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        220,
+        300
+      ],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9fa554bd-10e5-5eb0-896b-046fb46cb28e",
+              "name": "review_email",
+              "value": "you@example.com",
+              "type": "string"
+            },
+            {
+              "id": "3e2f7376-84bc-50bb-be49-0b6b982df34e",
+              "name": "sheet_url",
+              "value": "https://docs.google.com/spreadsheets/d/PASTE-YOUR-SHEET-ID/edit",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": false,
+        "options": {}
+      }
+    },
+    {
+      "id": "98ba83af-2585-547a-9e00-f8c468b35aa2",
+      "name": "Which event?",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        440,
+        300
+      ],
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "39af614f-0bd3-5845-bba9-484bb4a59034",
+                    "leftValue": "={{ $('DocSift events').item.json.body.event }}",
+                    "rightValue": "document.approved",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Approved"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "10812c7d-2136-5d30-8fea-c68e11de9974",
+                    "leftValue": "={{ $('DocSift events').item.json.body.event }}",
+                    "rightValue": "document.needs_review",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Needs review"
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "b330ff5d-ad9f-579f-b4dd-ba5847f15781",
+      "name": "Sheet row",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        700,
+        180
+      ],
+      "parameters": {
+        "jsCode": "return [{ json: $('DocSift events').first().json.body.data.row }];"
+      }
+    },
+    {
+      "id": "3adc668a-6d29-52b9-a93e-a9228131b4e6",
+      "name": "Add to the Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        940,
+        180
+      ],
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "url",
+          "value": "={{ $('Settings').item.json.sheet_url }}"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "={{ $('DocSift events').item.json.body.data.sheet }}"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "ecedfd94-87d2-5df1-98cb-0650e4051b9c",
+      "name": "Review email",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        700,
+        420
+      ],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fe5ba808-9e2d-5253-95e1-07a36f6da36d",
+              "name": "to",
+              "value": "={{ $('Settings').item.json.review_email }}",
+              "type": "string"
+            },
+            {
+              "id": "ac11bd8d-d2a2-5896-a82e-93118b039ddf",
+              "name": "subject",
+              "value": "=Document needs a look: {{ $('DocSift events').item.json.body.data.filename }}",
+              "type": "string"
+            },
+            {
+              "id": "bd6c8313-9e7a-5eaf-a898-604ecb6aa7ae",
+              "name": "text",
+              "value": "=A document uploaded to DocSift needs a quick check before it's approved.\n\nFile:  {{ $('DocSift events').item.json.body.data.filename }} ({{ $('DocSift events').item.json.body.data.type }})\n\nWhy:\n{{ $('DocSift events').item.json.body.data.reasons.map(r => '- ' + r).join('\\n') }}\n\nReview and approve it here: {{ $('DocSift events').item.json.body.data.link }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": false,
+        "options": {}
+      }
+    },
+    {
+      "id": "156e264d-097e-513e-a954-a0c93d73e786",
+      "name": "Email the reviewer",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        940,
+        420
+      ],
+      "webhookId": "a7860303-135d-5bbd-bceb-44d8ab82de7e",
+      "parameters": {
+        "sendTo": "={{ $json.to }}",
+        "subject": "={{ $json.subject }}",
+        "emailType": "text",
+        "message": "={{ $json.text }}",
+        "options": {
+          "appendAttribution": false
+        }
+      }
+    }
+  ],
+  "connections": {
+    "DocSift events": {
+      "main": [
+        [
+          {
+            "node": "Settings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Settings": {
+      "main": [
+        [
+          {
+            "node": "Which event?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Which event?": {
+      "main": [
+        [
+          {
+            "node": "Sheet row",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Review email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sheet row": {
+      "main": [
+        [
+          {
+            "node": "Add to the Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Review email": {
+      "main": [
+        [
+          {
+            "node": "Email the reviewer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/New_York"
+  },
+  "pinData": {},
+  "active": false,
+  "meta": {
+    "templateCredsSetupCompleted": false
+  }
+}
