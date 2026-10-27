@@ -1,0 +1,31 @@
+{
+  "id": "w9-14",
+  "type": "w9",
+  "file": "w9-14.jpg",
+  "fields": {
+    "name": "Omar Dalton",
+    "business_name": "Alvarez Bookkeeping Family Trust",
+    "tax_classification": "trust_estate",
+    "llc_tax_code": null,
+    "address": "8353 Lakeview Blvd",
+    "city_state_zip": "Madison, WI 53703",
+    "tin_type": "EIN",
+    "tin_last4": "5657",
+    "signed": true,
+    "date_signed": "2026-02-07"
+  },
+  "printed": [
+    "Omar Dalton",
+    "8353 Lakeview Blvd",
+    "Madison, WI 53703",
+    "5657",
+    "Alvarez Bookkeeping Family Trust",
+    "02/07/2026"
+  ],
+  "meta": {
+    "layout": "typed",
+    "condition": "photo",
+    "tricks": [],
+    "full_tin": "003235657"
+  }
+}

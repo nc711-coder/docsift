@@ -1,0 +1,57 @@
+{
+  "id": "rcp-17",
+  "type": "receipt",
+  "file": "rcp-17.jpg",
+  "fields": {
+    "merchant_name": "Luna Taqueria",
+    "merchant_address": "4573 Mill Rd, Tulsa, OK 74103",
+    "date": "2026-02-12",
+    "time": "19:35",
+    "items": [
+      {
+        "description": "Grilled Salmon",
+        "quantity": 1,
+        "amount": 26.33
+      },
+      {
+        "description": "Grilled Salmon",
+        "quantity": 2,
+        "amount": 53.66
+      },
+      {
+        "description": "Fish Tacos",
+        "quantity": 1,
+        "amount": 13.22
+      }
+    ],
+    "subtotal": null,
+    "tax": 5.28,
+    "tax_included": true,
+    "tip": 13.98,
+    "total": 107.19,
+    "payment_method": "visa",
+    "card_last4": "5136",
+    "category": "meals"
+  },
+  "printed": [
+    "Luna Taqueria",
+    "02/12/26",
+    "107.19",
+    "Grilled Salmon",
+    "Grilled Salmon",
+    "Fish Tacos",
+    "26.33",
+    "53.66",
+    "13.22",
+    "13.98",
+    "5.28",
+    "5136"
+  ],
+  "meta": {
+    "layout": "restaurant",
+    "condition": "photo",
+    "tricks": [
+      "tax_included"
+    ]
+  }
+}

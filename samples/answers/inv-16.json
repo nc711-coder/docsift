@@ -1,0 +1,72 @@
+{
+  "id": "inv-16",
+  "type": "invoice",
+  "file": "inv-16.jpg",
+  "fields": {
+    "vendor_name": "Sparkfield Commercial Cleaning",
+    "vendor_address": "4414 Ridge Rd, Lansing, MI 48933",
+    "invoice_number": "SP-579-54",
+    "invoice_date": "2026-06-21",
+    "due_date": "2026-07-21",
+    "po_number": null,
+    "bill_to_name": "Northstar Charter School",
+    "bill_to_address": "7820 Union St, Arlington, VA 22201",
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "Window washing, exterior",
+        "quantity": 1,
+        "unit_price": 297.16,
+        "amount": 297.16
+      },
+      {
+        "description": "Nightly office cleaning - month",
+        "quantity": 3,
+        "unit_price": 2248.66,
+        "amount": 6745.98
+      },
+      {
+        "description": "Carpet deep clean",
+        "quantity": 1200,
+        "unit_price": 0.39,
+        "amount": 468.0
+      },
+      {
+        "description": "Restroom supplies restock",
+        "quantity": 1,
+        "unit_price": 108.68,
+        "amount": 108.68
+      }
+    ],
+    "subtotal": 7619.82,
+    "discount": null,
+    "tax": 666.73,
+    "shipping": null,
+    "total": 8286.55,
+    "payment_terms": "Net 30"
+  },
+  "printed": [
+    "Sparkfield Commercial Cleaning",
+    "SP-579-54",
+    "06/21/2026",
+    "Northstar Charter School",
+    "$8,286.55",
+    "07/21/2026",
+    "$7,619.82",
+    "$666.73",
+    "Net 30",
+    "Window washing, exterior",
+    "Nightly office cleaning - month",
+    "Carpet deep clean",
+    "Restroom supplies restock",
+    "$297.16",
+    "$6,745.98",
+    "$468.00",
+    "$108.68"
+  ],
+  "meta": {
+    "layout": "classic",
+    "condition": "photo",
+    "tricks": []
+  }
+}

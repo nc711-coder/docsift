@@ -1,0 +1,31 @@
+{
+  "id": "w9-03",
+  "type": "w9",
+  "file": "w9-03.pdf",
+  "fields": {
+    "name": "Lena Dalton",
+    "business_name": "Fairchild Electric Partners",
+    "tax_classification": "partnership",
+    "llc_tax_code": null,
+    "address": "6675 Lakeview Blvd",
+    "city_state_zip": "Madison, WI 53703",
+    "tin_type": "EIN",
+    "tin_last4": "5661",
+    "signed": true,
+    "date_signed": "2026-09-26"
+  },
+  "printed": [
+    "Lena Dalton",
+    "6675 Lakeview Blvd",
+    "Madison, WI 53703",
+    "5661",
+    "Fairchild Electric Partners",
+    "09/26/2026"
+  ],
+  "meta": {
+    "layout": "typed",
+    "condition": "clean",
+    "tricks": [],
+    "full_tin": "005455661"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "w9-19",
+  "type": "w9",
+  "file": "w9-19.pdf",
+  "fields": {
+    "name": "Marcus Mbeki",
+    "business_name": "Alvarez Electric LLC",
+    "tax_classification": "llc",
+    "llc_tax_code": "S",
+    "address": "9722 Lakeview Blvd",
+    "city_state_zip": "Eugene, OR 97401",
+    "tin_type": "EIN",
+    "tin_last4": "1270",
+    "signed": true,
+    "date_signed": "2026-08-02"
+  },
+  "printed": [
+    "Marcus Mbeki",
+    "9722 Lakeview Blvd",
+    "Eugene, OR 97401",
+    "1270",
+    "Alvarez Electric LLC",
+    "August 2, 2026"
+  ],
+  "meta": {
+    "layout": "handwritten_font",
+    "condition": "scan",
+    "tricks": [
+      "handwritten_font"
+    ],
+    "full_tin": "007521270"
+  }
+}

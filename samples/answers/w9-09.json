@@ -1,0 +1,31 @@
+{
+  "id": "w9-09",
+  "type": "w9",
+  "file": "w9-09.pdf",
+  "fields": {
+    "name": "Yuki Mbeki",
+    "business_name": "Kowalski Landscaping Family Trust",
+    "tax_classification": "trust_estate",
+    "llc_tax_code": null,
+    "address": "2084 Mill Rd, Suite 302",
+    "city_state_zip": "Madison, WI 53703",
+    "tin_type": "EIN",
+    "tin_last4": "4584",
+    "signed": true,
+    "date_signed": "2026-06-17"
+  },
+  "printed": [
+    "Yuki Mbeki",
+    "2084 Mill Rd, Suite 302",
+    "Madison, WI 53703",
+    "4584",
+    "Kowalski Landscaping Family Trust",
+    "June 17, 2026"
+  ],
+  "meta": {
+    "layout": "typed",
+    "condition": "clean",
+    "tricks": [],
+    "full_tin": "005364584"
+  }
+}

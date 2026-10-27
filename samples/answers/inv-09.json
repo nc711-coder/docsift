@@ -1,0 +1,91 @@
+{
+  "id": "inv-09",
+  "type": "invoice",
+  "file": "inv-09.jpg",
+  "fields": {
+    "vendor_name": "Staplewood Business Products",
+    "vendor_address": "2207 Lakeview Blvd, Suite 422, Boise, ID 83702",
+    "invoice_number": "ST-731-48",
+    "invoice_date": "2026-02-11",
+    "due_date": null,
+    "po_number": "PO-47772",
+    "bill_to_name": "Harborview Dental Group",
+    "bill_to_address": "7876 Lakeview Blvd, Savannah, GA 31401",
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 1,
+        "unit_price": 14.05,
+        "amount": 14.05
+      },
+      {
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 3,
+        "unit_price": 11.2,
+        "amount": 33.6
+      },
+      {
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 2,
+        "unit_price": 9.2,
+        "amount": 18.4
+      },
+      {
+        "description": "Copy paper, letter, 10 reams",
+        "quantity": 2,
+        "unit_price": 55.47,
+        "amount": 110.94
+      },
+      {
+        "description": "Sticky notes, 24 pads",
+        "quantity": 3,
+        "unit_price": 13.42,
+        "amount": 40.26
+      },
+      {
+        "description": "Ergonomic office chair",
+        "quantity": 1,
+        "unit_price": 232.77,
+        "amount": 232.77
+      }
+    ],
+    "subtotal": 450.02,
+    "discount": null,
+    "tax": 36.0,
+    "shipping": 73.6,
+    "total": 559.62,
+    "payment_terms": "Due on receipt"
+  },
+  "printed": [
+    "Staplewood Business Products",
+    "ST-731-48",
+    "2026-02-11",
+    "Harborview Dental Group",
+    "$559.62",
+    "PO-47772",
+    "$450.02",
+    "$36.00",
+    "$73.60",
+    "Due on receipt",
+    "Ballpoint pens, box of 50",
+    "Ballpoint pens, box of 50",
+    "Ballpoint pens, box of 50",
+    "Copy paper, letter, 10 reams",
+    "Sticky notes, 24 pads",
+    "Ergonomic office chair",
+    "$14.05",
+    "$33.60",
+    "$18.40",
+    "$110.94",
+    "$40.26",
+    "$232.77"
+  ],
+  "meta": {
+    "layout": "remit",
+    "condition": "photo",
+    "tricks": [
+      "due_on_receipt"
+    ]
+  }
+}

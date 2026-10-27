@@ -1,0 +1,64 @@
+{
+  "id": "inv-01",
+  "type": "invoice",
+  "file": "inv-01.pdf",
+  "fields": {
+    "vendor_name": "ClearCourse Janitorial LLC",
+    "vendor_address": "8607 Ridge Rd, Portland, ME 04101",
+    "invoice_number": "CL-673-61",
+    "invoice_date": "2026-08-26",
+    "due_date": "2026-10-10",
+    "po_number": null,
+    "bill_to_name": "Copper Kettle Restaurants",
+    "bill_to_address": "8498 Orchard St, Suite 214, Eugene, OR 97401",
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "Nightly office cleaning - month",
+        "quantity": 3,
+        "unit_price": 2536.63,
+        "amount": 7609.89
+      },
+      {
+        "description": "Nightly office cleaning - month",
+        "quantity": 2,
+        "unit_price": 2119.42,
+        "amount": 4238.84
+      },
+      {
+        "description": "Restroom supplies restock",
+        "quantity": 4,
+        "unit_price": 71.39,
+        "amount": 285.56
+      }
+    ],
+    "subtotal": 12134.29,
+    "discount": null,
+    "tax": 697.72,
+    "shipping": null,
+    "total": 12832.01,
+    "payment_terms": "Net 45"
+  },
+  "printed": [
+    "ClearCourse Janitorial LLC",
+    "CL-673-61",
+    "26 Aug 2026",
+    "Copper Kettle Restaurants",
+    "$12,832.01",
+    "10 Oct 2026",
+    "$12,134.29",
+    "$697.72",
+    "Net 45",
+    "Nightly office cleaning - month",
+    "Nightly office cleaning - month",
+    "Restroom supplies restock",
+    "$7,609.89",
+    "$4,238.84",
+    "$285.56"
+  ],
+  "meta": {
+    "layout": "classic",
+    "condition": "clean",
+    "tricks": []
+  }
+}

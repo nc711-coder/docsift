@@ -1,0 +1,96 @@
+{
+  "id": "rcp-06",
+  "type": "receipt",
+  "file": "rcp-06.pdf",
+  "fields": {
+    "merchant_name": "GREEN BASKET FOODS",
+    "merchant_address": "5225 Summit Ave, Fresno, CA 93721",
+    "date": "2026-03-08",
+    "time": "17:21",
+    "items": [
+      {
+        "description": "SPINACH 5OZ",
+        "quantity": null,
+        "amount": 3.78
+      },
+      {
+        "description": "DISH SOAP",
+        "quantity": null,
+        "amount": 2.97
+      },
+      {
+        "description": "PAPER TOWELS 6PK",
+        "quantity": null,
+        "amount": 11.03
+      },
+      {
+        "description": "EGGS LG DOZEN",
+        "quantity": null,
+        "amount": 4.35
+      },
+      {
+        "description": "SPINACH 5OZ",
+        "quantity": null,
+        "amount": 3.75
+      },
+      {
+        "description": "SPARKLING WATER 8PK",
+        "quantity": null,
+        "amount": 5.43
+      },
+      {
+        "description": "BANANAS",
+        "quantity": null,
+        "amount": 2.35
+      },
+      {
+        "description": "EGGS LG DOZEN",
+        "quantity": null,
+        "amount": 4.31
+      },
+      {
+        "description": "COFFEE BEANS 12OZ",
+        "quantity": null,
+        "amount": 12.9
+      }
+    ],
+    "subtotal": 50.87,
+    "tax": 1.02,
+    "tax_included": false,
+    "tip": null,
+    "total": 51.89,
+    "payment_method": "visa",
+    "card_last4": "5901",
+    "category": "groceries"
+  },
+  "printed": [
+    "GREEN BASKET FOODS",
+    "03/08/26",
+    "51.89",
+    "SPINACH 5OZ",
+    "DISH SOAP",
+    "PAPER TOWELS 6PK",
+    "EGGS LG DOZEN",
+    "SPINACH 5OZ",
+    "SPARKLING WATER 8PK",
+    "BANANAS",
+    "EGGS LG DOZEN",
+    "COFFEE BEANS 12OZ",
+    "3.78",
+    "2.97",
+    "11.03",
+    "4.35",
+    "3.75",
+    "5.43",
+    "2.35",
+    "4.31",
+    "12.90",
+    "1.02",
+    "5901"
+  ],
+  "meta": {
+    "layout": "grocery",
+    "condition": "clean",
+    "tricks": []
+  }
+}

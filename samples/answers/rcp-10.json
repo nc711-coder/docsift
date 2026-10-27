@@ -1,0 +1,40 @@
+{
+  "id": "rcp-10",
+  "type": "receipt",
+  "file": "rcp-10.jpg",
+  "fields": {
+    "merchant_name": "CITYPARK GARAGE 4",
+    "merchant_address": "1560 Orchard St, Suite 198, Raleigh, NC 27601",
+    "date": "2026-05-23",
+    "time": "18:29",
+    "items": [
+      {
+        "description": "PARKING 5 HR",
+        "quantity": null,
+        "amount": 30.0
+      }
+    ],
+    "subtotal": null,
+    "tax": 1.7,
+    "tax_included": true,
+    "tip": null,
+    "total": 30.0,
+    "payment_method": "amex",
+    "card_last4": "2608",
+    "category": "travel"
+  },
+  "printed": [
+    "CITYPARK GARAGE 4",
+    "05/23/2026",
+    "30.00",
+    "PARKING 5 HR",
+    "30.00",
+    "1.70",
+    "2608"
+  ],
+  "meta": {
+    "layout": "parking",
+    "condition": "photo",
+    "tricks": []
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "id": "rcp-04",
+  "type": "receipt",
+  "file": "rcp-04.jpg",
+  "fields": {
+    "merchant_name": "DESKPOINT STORE 117",
+    "merchant_address": "9751 Commerce Dr, Suite 277, Boise, ID 83702",
+    "date": "2026-05-06",
+    "time": "09:28",
+    "items": [
+      {
+        "description": "COPY PAPER CASE",
+        "quantity": 1,
+        "amount": 45.3
+      },
+      {
+        "description": "USB-C CABLE 6FT",
+        "quantity": 3,
+        "amount": 56.25
+      },
+      {
+        "description": "TONER CART 26A",
+        "quantity": 3,
+        "amount": 299.7
+      },
+      {
+        "description": "USB-C CABLE 6FT",
+        "quantity": 3,
+        "amount": 40.53
+      },
+      {
+        "description": "TONER CART 26A",
+        "quantity": 1,
+        "amount": 96.3
+      }
+    ],
+    "subtotal": 538.08,
+    "tax": 37.67,
+    "tax_included": false,
+    "tip": null,
+    "total": 575.75,
+    "payment_method": "cash",
+    "card_last4": null,
+    "category": "office_supplies"
+  },
+  "printed": [
+    "DESKPOINT STORE 117",
+    "MAY",
+    "575.75",
+    "COPY PAPER CASE",
+    "USB-C CABLE 6FT",
+    "TONER CART 26A",
+    "USB-C CABLE 6FT",
+    "TONER CART 26A",
+    "45.30",
+    "56.25",
+    "299.70",
+    "40.53",
+    "96.30",
+    "37.67"
+  ],
+  "meta": {
+    "layout": "office",
+    "condition": "photo",
+    "tricks": [
+      "cash"
+    ]
+  }
+}

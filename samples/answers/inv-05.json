@@ -1,0 +1,80 @@
+{
+  "id": "inv-05",
+  "type": "invoice",
+  "file": "inv-05.pdf",
+  "fields": {
+    "vendor_name": "Bold Arrow Marketing Group",
+    "vendor_address": "8744 Lakeview Blvd, Portland, ME 04101",
+    "invoice_number": "INV-9930",
+    "invoice_date": "2026-06-23",
+    "due_date": "2026-08-07",
+    "po_number": null,
+    "bill_to_name": "Northstar Charter School",
+    "bill_to_address": "3079 Elm St, Suite 337, Raleigh, NC 27601",
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "Graphic design",
+        "quantity": 2,
+        "unit_price": 87.26,
+        "amount": 174.52
+      },
+      {
+        "description": "Copywriting",
+        "quantity": 7.5,
+        "unit_price": 93.56,
+        "amount": 701.7
+      },
+      {
+        "description": "Brand strategy workshop",
+        "quantity": 3,
+        "unit_price": 2412.68,
+        "amount": 7238.04
+      },
+      {
+        "description": "Copywriting",
+        "quantity": 2.5,
+        "unit_price": 109.89,
+        "amount": 274.73
+      },
+      {
+        "description": "Social media management - month",
+        "quantity": 1,
+        "unit_price": 907.36,
+        "amount": 907.36
+      }
+    ],
+    "subtotal": 9296.35,
+    "discount": null,
+    "tax": 743.71,
+    "shipping": null,
+    "total": 10040.06,
+    "payment_terms": "Net 45"
+  },
+  "printed": [
+    "Bold Arrow Marketing Group",
+    "INV-9930",
+    "June 23, 2026",
+    "Northstar Charter School",
+    "$10,040.06",
+    "August 7, 2026",
+    "$9,296.35",
+    "$743.71",
+    "Net 45",
+    "Graphic design",
+    "Copywriting",
+    "Brand strategy workshop",
+    "Copywriting",
+    "Social media management - month",
+    "$174.52",
+    "$701.70",
+    "$7,238.04",
+    "$274.73",
+    "$907.36"
+  ],
+  "meta": {
+    "layout": "service",
+    "condition": "scan",
+    "tricks": []
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "rcp-14",
+  "type": "receipt",
+  "file": "rcp-14.pdf",
+  "fields": {
+    "merchant_name": "PAPERWELL OFFICE SUPPLY",
+    "merchant_address": "5843 Industrial Pkwy, Suite 224, Fresno, CA 93721",
+    "date": "2026-08-09",
+    "time": "10:41",
+    "items": [
+      {
+        "description": "LABEL MAKER TAPE",
+        "quantity": 1,
+        "amount": 17.08
+      },
+      {
+        "description": "LABEL MAKER TAPE",
+        "quantity": 3,
+        "amount": 57.45
+      },
+      {
+        "description": "USB-C CABLE 6FT",
+        "quantity": 1,
+        "amount": 18.14
+      },
+      {
+        "description": "LABEL MAKER TAPE",
+        "quantity": 2,
+        "amount": 35.2
+      },
+      {
+        "description": "USB-C CABLE 6FT",
+        "quantity": 2,
+        "amount": 28.44
+      }
+    ],
+    "subtotal": 156.31,
+    "tax": 10.94,
+    "tax_included": false,
+    "tip": null,
+    "total": 167.25,
+    "payment_method": "discover",
+    "card_last4": "9112",
+    "category": "office_supplies"
+  },
+  "printed": [
+    "PAPERWELL OFFICE SUPPLY",
+    "08/09/2026",
+    "167.25",
+    "LABEL MAKER TAPE",
+    "LABEL MAKER TAPE",
+    "USB-C CABLE 6FT",
+    "LABEL MAKER TAPE",
+    "USB-C CABLE 6FT",
+    "17.08",
+    "57.45",
+    "18.14",
+    "35.20",
+    "28.44",
+    "10.94",
+    "9112"
+  ],
+  "meta": {
+    "layout": "office",
+    "condition": "scan",
+    "tricks": []
+  }
+}

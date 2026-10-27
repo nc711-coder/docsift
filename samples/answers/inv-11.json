@@ -1,0 +1,89 @@
+{
+  "id": "inv-11",
+  "type": "invoice",
+  "file": "inv-11.pdf",
+  "fields": {
+    "vendor_name": "Copperleaf Tech Partners",
+    "vendor_address": "8964 Union St, Suite 280, Tulsa, OK 74103",
+    "invoice_number": "CO-383-89",
+    "invoice_date": "2026-01-14",
+    "due_date": "2026-02-13",
+    "po_number": "PO-49105",
+    "bill_to_name": "Bluewater Veterinary Clinic",
+    "bill_to_address": "6561 Summit Ave, Suite 236, Arlington, VA 22201",
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "Cloud backup storage 1 TB",
+        "quantity": 10,
+        "unit_price": 24.81,
+        "amount": 248.1
+      },
+      {
+        "description": "Microsoft 365 Business seats",
+        "quantity": 10,
+        "unit_price": 18.62,
+        "amount": 186.2
+      },
+      {
+        "description": "Help desk tickets (overage)",
+        "quantity": 10,
+        "unit_price": 54.46,
+        "amount": 544.6
+      },
+      {
+        "description": "Help desk tickets (overage)",
+        "quantity": 8,
+        "unit_price": 57.23,
+        "amount": 457.84
+      },
+      {
+        "description": "Managed IT support - monthly",
+        "quantity": 1,
+        "unit_price": 500.62,
+        "amount": 500.62
+      },
+      {
+        "description": "Cloud backup storage 1 TB",
+        "quantity": 5,
+        "unit_price": 21.26,
+        "amount": 106.3
+      }
+    ],
+    "subtotal": 2043.66,
+    "discount": null,
+    "tax": 148.17,
+    "shipping": null,
+    "total": 2191.83,
+    "payment_terms": "Net 30"
+  },
+  "printed": [
+    "Copperleaf Tech Partners",
+    "CO-383-89",
+    "01/14/2026",
+    "Bluewater Veterinary Clinic",
+    "$2,191.83",
+    "02/13/2026",
+    "PO-49105",
+    "$2,043.66",
+    "$148.17",
+    "Net 30",
+    "Cloud backup storage 1 TB",
+    "Microsoft 365 Business seats",
+    "Help desk tickets (overage)",
+    "Help desk tickets (overage)",
+    "Managed IT support - monthly",
+    "Cloud backup storage 1 TB",
+    "$248.10",
+    "$186.20",
+    "$544.60",
+    "$457.84",
+    "$500.62",
+    "$106.30"
+  ],
+  "meta": {
+    "layout": "classic",
+    "condition": "clean",
+    "tricks": []
+  }
+}

@@ -1,0 +1,16 @@
+# Reading documents
+pdfplumber==0.11.10        # text layer of real PDFs
+pypdfium2>=4.30            # renders PDF pages to images (for scans)
+pytesseract==0.3.13        # OCR (needs the Tesseract program installed)
+Pillow>=11.0
+numpy>=2.0
+opencv-python-headless>=4.10   # straightening photos and scans
+
+# Fields and validation
+pydantic>=2.9
+
+# Making the synthetic test documents (samples/generate.py)
+reportlab>=4.2
+
+# Tests
+pytest>=8.0

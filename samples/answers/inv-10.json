@@ -1,0 +1,80 @@
+{
+  "id": "inv-10",
+  "type": "invoice",
+  "file": "inv-10.pdf",
+  "fields": {
+    "vendor_name": "Brightline IT Services LLC",
+    "vendor_address": "3619 Bridge St, Tulsa, OK 74103",
+    "invoice_number": "2026274",
+    "invoice_date": "2026-06-23",
+    "due_date": "2026-07-23",
+    "po_number": null,
+    "bill_to_name": "Bluewater Veterinary Clinic",
+    "bill_to_address": "6724 Bridge St, Boise, ID 83702",
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "On-site network troubleshooting",
+        "quantity": 10,
+        "unit_price": 105.03,
+        "amount": 1050.3
+      },
+      {
+        "description": "Cloud backup storage 1 TB",
+        "quantity": 12,
+        "unit_price": 37.87,
+        "amount": 454.44
+      },
+      {
+        "description": "Firewall license renewal (12 months)",
+        "quantity": 1,
+        "unit_price": 497.38,
+        "amount": 497.38
+      },
+      {
+        "description": "Firewall license renewal (12 months)",
+        "quantity": 2,
+        "unit_price": 459.87,
+        "amount": 919.74
+      },
+      {
+        "description": "Firewall license renewal (12 months)",
+        "quantity": 1,
+        "unit_price": 387.22,
+        "amount": 387.22
+      }
+    ],
+    "subtotal": 3309.08,
+    "discount": null,
+    "tax": 198.54,
+    "shipping": null,
+    "total": 3507.62,
+    "payment_terms": "Net 30"
+  },
+  "printed": [
+    "Brightline IT Services LLC",
+    "2026274",
+    "June 23, 2026",
+    "Bluewater Veterinary Clinic",
+    "$3,507.62",
+    "July 23, 2026",
+    "$3,309.08",
+    "$198.54",
+    "Net 30",
+    "On-site network troubleshooting",
+    "Cloud backup storage 1 TB",
+    "Firewall license renewal (12 months)",
+    "Firewall license renewal (12 months)",
+    "Firewall license renewal (12 months)",
+    "$1,050.30",
+    "$454.44",
+    "$497.38",
+    "$919.74",
+    "$387.22"
+  ],
+  "meta": {
+    "layout": "service",
+    "condition": "clean",
+    "tricks": []
+  }
+}

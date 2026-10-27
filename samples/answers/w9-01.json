@@ -1,0 +1,31 @@
+{
+  "id": "w9-01",
+  "type": "w9",
+  "file": "w9-01.pdf",
+  "fields": {
+    "name": "Hannah Pellegrini",
+    "business_name": "Kowalski Design Cooperative",
+    "tax_classification": "other",
+    "llc_tax_code": null,
+    "address": "5157 Maple Ave",
+    "city_state_zip": "Eugene, OR 97401",
+    "tin_type": "EIN",
+    "tin_last4": "8466",
+    "signed": true,
+    "date_signed": "2026-05-02"
+  },
+  "printed": [
+    "Hannah Pellegrini",
+    "5157 Maple Ave",
+    "Eugene, OR 97401",
+    "8466",
+    "Kowalski Design Cooperative",
+    "May 2, 2026"
+  ],
+  "meta": {
+    "layout": "handwritten_font",
+    "condition": "clean",
+    "tricks": [],
+    "full_tin": "005358466"
+  }
+}

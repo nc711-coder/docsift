@@ -1,0 +1,41 @@
+{
+  "id": "rcp-15",
+  "type": "receipt",
+  "file": "rcp-15.pdf",
+  "fields": {
+    "merchant_name": "METRO CAB CO.",
+    "merchant_address": "5211 Summit Ave, Suite 269, Raleigh, NC 27601",
+    "date": "2026-10-13",
+    "time": "08:54",
+    "items": [
+      {
+        "description": "FARE",
+        "quantity": null,
+        "amount": 16.69
+      }
+    ],
+    "subtotal": null,
+    "tax": 0.94,
+    "tax_included": true,
+    "tip": 3.34,
+    "total": 20.03,
+    "payment_method": "mastercard",
+    "card_last4": "5058",
+    "category": "travel"
+  },
+  "printed": [
+    "METRO CAB CO.",
+    "10/13/2026",
+    "20.03",
+    "FARE",
+    "16.69",
+    "3.34",
+    "0.94",
+    "5058"
+  ],
+  "meta": {
+    "layout": "parking",
+    "condition": "scan",
+    "tricks": []
+  }
+}

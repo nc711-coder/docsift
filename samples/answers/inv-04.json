@@ -1,0 +1,65 @@
+{
+  "id": "inv-04",
+  "type": "invoice",
+  "file": "inv-04.pdf",
+  "fields": {
+    "vendor_name": "Staplewood Business Products",
+    "vendor_address": "5353 Industrial Pkwy, Tulsa, OK 74103",
+    "invoice_number": "INV-4088",
+    "invoice_date": "2026-01-29",
+    "due_date": "2026-03-15",
+    "po_number": "PO-48682",
+    "bill_to_name": "Copper Kettle Restaurants",
+    "bill_to_address": "2809 Commerce Dr, Savannah, GA 31401",
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "Desk organizer set",
+        "quantity": 24,
+        "unit_price": 27.97,
+        "amount": 671.28
+      },
+      {
+        "description": "Ergonomic office chair",
+        "quantity": 1,
+        "unit_price": 332.13,
+        "amount": 332.13
+      },
+      {
+        "description": "Desk organizer set",
+        "quantity": 3,
+        "unit_price": 18.55,
+        "amount": 55.65
+      }
+    ],
+    "subtotal": 1059.06,
+    "discount": null,
+    "tax": 60.9,
+    "shipping": null,
+    "total": 1119.96,
+    "payment_terms": "Net 45"
+  },
+  "printed": [
+    "Staplewood Business Products",
+    "INV-4088",
+    "2026-01-29",
+    "Copper Kettle Restaurants",
+    "$1,119.96",
+    "2026-03-15",
+    "PO-48682",
+    "$1,059.06",
+    "$60.90",
+    "Net 45",
+    "Desk organizer set",
+    "Ergonomic office chair",
+    "Desk organizer set",
+    "$671.28",
+    "$332.13",
+    "$55.65"
+  ],
+  "meta": {
+    "layout": "remit",
+    "condition": "clean",
+    "tricks": []
+  }
+}

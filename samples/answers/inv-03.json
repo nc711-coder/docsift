@@ -1,0 +1,93 @@
+{
+  "id": "inv-03",
+  "type": "invoice",
+  "file": "inv-03.pdf",
+  "fields": {
+    "vendor_name": "Ironside Building Supply",
+    "vendor_address": "15 Mill Rd, Columbus, OH 43215",
+    "invoice_number": "INV-7160",
+    "invoice_date": "2026-03-22",
+    "due_date": "2026-04-21",
+    "po_number": "PO-45685",
+    "bill_to_name": "Pinecrest Property Management",
+    "bill_to_address": "3269 Harbor St, Suite 122, Savannah, GA 31401",
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "Concrete mix 80 lb",
+        "quantity": 10,
+        "unit_price": 7.77,
+        "amount": 77.7
+      },
+      {
+        "description": "Drywall sheet 4x8 1/2in",
+        "quantity": 24,
+        "unit_price": 11.03,
+        "amount": 264.72
+      },
+      {
+        "description": "Plywood 3/4in sheet",
+        "quantity": 3,
+        "unit_price": 55.29,
+        "amount": 165.87
+      },
+      {
+        "description": "Rebar #4 20 ft",
+        "quantity": 3,
+        "unit_price": 10.34,
+        "amount": 31.02
+      },
+      {
+        "description": "Rebar #4 20 ft",
+        "quantity": 5,
+        "unit_price": 14.26,
+        "amount": 71.3
+      },
+      {
+        "description": "2x4x8 kiln-dried stud",
+        "quantity": 3,
+        "unit_price": 4.92,
+        "amount": 14.76
+      }
+    ],
+    "subtotal": 625.37,
+    "discount": 31.27,
+    "tax": 51.98,
+    "shipping": 43.84,
+    "total": 689.92,
+    "payment_terms": "Net 30"
+  },
+  "printed": [
+    "Ironside Building Supply",
+    "INV-7160",
+    "03/22/2026",
+    "Pinecrest Property Management",
+    "$689.92",
+    "04/21/2026",
+    "PO-45685",
+    "$625.37",
+    "$51.98",
+    "$43.84",
+    "$31.27",
+    "Net 30",
+    "Concrete mix 80 lb",
+    "Drywall sheet 4x8 1/2in",
+    "Plywood 3/4in sheet",
+    "Rebar #4 20 ft",
+    "Rebar #4 20 ft",
+    "2x4x8 kiln-dried stud",
+    "77.70",
+    "264.72",
+    "165.87",
+    "31.02",
+    "71.30",
+    "14.76"
+  ],
+  "meta": {
+    "layout": "minimal",
+    "condition": "clean",
+    "tricks": [
+      "discount"
+    ]
+  }
+}

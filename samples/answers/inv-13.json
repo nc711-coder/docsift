@@ -1,0 +1,81 @@
+{
+  "id": "inv-13",
+  "type": "invoice",
+  "file": "inv-13.pdf",
+  "fields": {
+    "vendor_name": "Paperwell Office Supply Co.",
+    "vendor_address": "1069 Summit Ave, Portland, ME 04101",
+    "invoice_number": "PA-910-44",
+    "invoice_date": "2026-09-22",
+    "due_date": "2026-10-22",
+    "po_number": null,
+    "bill_to_name": "Meridian Physical Therapy",
+    "bill_to_address": "8732 Orchard St, Lansing, MI 48933",
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "Black toner cartridge HY",
+        "quantity": 10,
+        "unit_price": 136.77,
+        "amount": 1367.7
+      },
+      {
+        "description": "Shipping labels, 1000 ct",
+        "quantity": 10,
+        "unit_price": 28.45,
+        "amount": 284.5
+      },
+      {
+        "description": "Sticky notes, 24 pads",
+        "quantity": 3,
+        "unit_price": 12.45,
+        "amount": 37.35
+      },
+      {
+        "description": "Filing cabinet, 3-drawer",
+        "quantity": 3,
+        "unit_price": 256.4,
+        "amount": 769.2
+      },
+      {
+        "description": "Desk organizer set",
+        "quantity": 4,
+        "unit_price": 28.09,
+        "amount": 112.36
+      }
+    ],
+    "subtotal": 2571.11,
+    "discount": null,
+    "tax": 147.84,
+    "shipping": 29.68,
+    "total": 2748.63,
+    "payment_terms": "Net 30"
+  },
+  "printed": [
+    "Paperwell Office Supply Co.",
+    "PA-910-44",
+    "September 22, 2026",
+    "Meridian Physical Therapy",
+    "$2,748.63",
+    "October 22, 2026",
+    "$2,571.11",
+    "$147.84",
+    "$29.68",
+    "Net 30",
+    "Black toner cartridge HY",
+    "Shipping labels, 1000 ct",
+    "Sticky notes, 24 pads",
+    "Filing cabinet, 3-drawer",
+    "Desk organizer set",
+    "1,367.70",
+    "284.50",
+    "37.35",
+    "769.20",
+    "112.36"
+  ],
+  "meta": {
+    "layout": "minimal",
+    "condition": "clean",
+    "tricks": []
+  }
+}

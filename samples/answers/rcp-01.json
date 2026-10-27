@@ -1,0 +1,96 @@
+{
+  "id": "rcp-01",
+  "type": "receipt",
+  "file": "rcp-01.pdf",
+  "fields": {
+    "merchant_name": "VALLEY HARVEST GROCERY",
+    "merchant_address": "6205 Summit Ave, Suite 331, Eugene, OR 97401",
+    "date": "2026-05-09",
+    "time": "09:32",
+    "items": [
+      {
+        "description": "CHEDDAR 8OZ",
+        "quantity": null,
+        "amount": 4.44
+      },
+      {
+        "description": "EGGS LG DOZEN",
+        "quantity": null,
+        "amount": 4.2
+      },
+      {
+        "description": "SOURDOUGH LOAF",
+        "quantity": null,
+        "amount": 5.25
+      },
+      {
+        "description": "EGGS LG DOZEN",
+        "quantity": null,
+        "amount": 4.14
+      },
+      {
+        "description": "DISH SOAP",
+        "quantity": null,
+        "amount": 2.89
+      },
+      {
+        "description": "COFFEE BEANS 12OZ",
+        "quantity": null,
+        "amount": 12.68
+      },
+      {
+        "description": "SPARKLING WATER 8PK",
+        "quantity": null,
+        "amount": 5.77
+      },
+      {
+        "description": "CHICKEN BREAST",
+        "quantity": null,
+        "amount": 8.38
+      },
+      {
+        "description": "EGGS LG DOZEN",
+        "quantity": null,
+        "amount": 3.4
+      }
+    ],
+    "subtotal": 51.15,
+    "tax": 1.02,
+    "tax_included": false,
+    "tip": null,
+    "total": 52.17,
+    "payment_method": "debit",
+    "card_last4": "8370",
+    "category": "groceries"
+  },
+  "printed": [
+    "VALLEY HARVEST GROCERY",
+    "MAY",
+    "52.17",
+    "CHEDDAR 8OZ",
+    "EGGS LG DOZEN",
+    "SOURDOUGH LOAF",
+    "EGGS LG DOZEN",
+    "DISH SOAP",
+    "COFFEE BEANS 12OZ",
+    "SPARKLING WATER 8PK",
+    "CHICKEN BREAST",
+    "EGGS LG DOZEN",
+    "4.44",
+    "4.20",
+    "5.25",
+    "4.14",
+    "2.89",
+    "12.68",
+    "5.77",
+    "8.38",
+    "3.40",
+    "1.02",
+    "8370"
+  ],
+  "meta": {
+    "layout": "grocery",
+    "condition": "scan",
+    "tricks": []
+  }
+}

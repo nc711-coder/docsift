@@ -1,0 +1,68 @@
+{
+  "id": "inv-15",
+  "type": "invoice",
+  "file": "inv-15.pdf",
+  "fields": {
+    "vendor_name": "Brightline IT Services LLC",
+    "vendor_address": "3146 Bridge St, Eugene, OR 97401",
+    "invoice_number": "2026957",
+    "invoice_date": "2026-04-22",
+    "due_date": "2026-05-22",
+    "po_number": "PO-43457",
+    "bill_to_name": "Northstar Charter School",
+    "bill_to_address": "7108 Harbor St, Lansing, MI 48933",
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "On-site network troubleshooting",
+        "quantity": 7.5,
+        "unit_price": 109.6,
+        "amount": 822.0
+      },
+      {
+        "description": "On-site network troubleshooting",
+        "quantity": 8,
+        "unit_price": 119.2,
+        "amount": 953.6
+      },
+      {
+        "description": "Help desk tickets (overage)",
+        "quantity": 10,
+        "unit_price": 45.55,
+        "amount": 455.5
+      }
+    ],
+    "subtotal": 2231.1,
+    "discount": 223.11,
+    "tax": 145.58,
+    "shipping": null,
+    "total": 2153.57,
+    "payment_terms": "Net 30"
+  },
+  "printed": [
+    "Brightline IT Services LLC",
+    "2026957",
+    "04/22/2026",
+    "Northstar Charter School",
+    "$2,153.57",
+    "05/22/2026",
+    "PO-43457",
+    "$2,231.10",
+    "$145.58",
+    "$223.11",
+    "Net 30",
+    "On-site network troubleshooting",
+    "On-site network troubleshooting",
+    "Help desk tickets (overage)",
+    "$822.00",
+    "$953.60",
+    "$455.50"
+  ],
+  "meta": {
+    "layout": "service",
+    "condition": "scan",
+    "tricks": [
+      "discount"
+    ]
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "id": "rcp-07",
+  "type": "receipt",
+  "file": "rcp-07.pdf",
+  "fields": {
+    "merchant_name": "Luna Taqueria",
+    "merchant_address": "391 Bridge St, Arlington, VA 22201",
+    "date": "2026-10-08",
+    "time": "15:50",
+    "items": [
+      {
+        "description": "Craft Lager",
+        "quantity": 2,
+        "amount": 13.28
+      },
+      {
+        "description": "Iced Tea",
+        "quantity": 1,
+        "amount": 3.06
+      },
+      {
+        "description": "Iced Tea",
+        "quantity": 1,
+        "amount": 3.05
+      },
+      {
+        "description": "Clam Chowder",
+        "quantity": 2,
+        "amount": 17.24
+      },
+      {
+        "description": "Caesar Salad",
+        "quantity": 2,
+        "amount": 22.9
+      }
+    ],
+    "subtotal": 59.53,
+    "tax": 4.76,
+    "tax_included": false,
+    "tip": 12.86,
+    "total": 77.15,
+    "payment_method": "debit",
+    "card_last4": "0890",
+    "category": "meals"
+  },
+  "printed": [
+    "Luna Taqueria",
+    "10/08/26",
+    "77.15",
+    "Craft Lager",
+    "Iced Tea",
+    "Iced Tea",
+    "Clam Chowder",
+    "Caesar Salad",
+    "13.28",
+    "3.06",
+    "3.05",
+    "17.24",
+    "22.90",
+    "12.86",
+    "4.76",
+    "0890"
+  ],
+  "meta": {
+    "layout": "restaurant",
+    "condition": "clean",
+    "tricks": []
+  }
+}

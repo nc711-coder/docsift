@@ -1,0 +1,32 @@
+{
+  "id": "w9-16",
+  "type": "w9",
+  "file": "w9-16.pdf",
+  "fields": {
+    "name": "Sofia Navarro",
+    "business_name": "Chowdhury Catering Corp.",
+    "tax_classification": "s_corporation",
+    "llc_tax_code": null,
+    "address": "8043 Ridge Rd, Suite 423",
+    "city_state_zip": "Savannah, GA 31401",
+    "tin_type": "EIN",
+    "tin_last4": "7627",
+    "signed": false,
+    "date_signed": null
+  },
+  "printed": [
+    "Sofia Navarro",
+    "8043 Ridge Rd, Suite 423",
+    "Savannah, GA 31401",
+    "7627",
+    "Chowdhury Catering Corp."
+  ],
+  "meta": {
+    "layout": "handwritten_font",
+    "condition": "scan",
+    "tricks": [
+      "unsigned"
+    ],
+    "full_tin": "003627627"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "w9-18",
+  "type": "w9",
+  "file": "w9-18.jpg",
+  "fields": {
+    "name": "Yuki Navarro",
+    "business_name": "Iwata Catering Services",
+    "tax_classification": "individual_sole_proprietor",
+    "llc_tax_code": null,
+    "address": "3343 Union St",
+    "city_state_zip": "Madison, WI 53703",
+    "tin_type": "SSN",
+    "tin_last4": "4323",
+    "signed": true,
+    "date_signed": "2026-03-31"
+  },
+  "printed": [
+    "Yuki Navarro",
+    "3343 Union St",
+    "Madison, WI 53703",
+    "4323",
+    "Iwata Catering Services",
+    "March 31, 2026"
+  ],
+  "meta": {
+    "layout": "typed",
+    "condition": "photo",
+    "tricks": [],
+    "full_tin": "987654323"
+  }
+}

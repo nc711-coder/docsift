@@ -1,0 +1,31 @@
+{
+  "id": "w9-13",
+  "type": "w9",
+  "file": "w9-13.pdf",
+  "fields": {
+    "name": "Victor Fairchild",
+    "business_name": "Dalton Consulting Services",
+    "tax_classification": "individual_sole_proprietor",
+    "llc_tax_code": null,
+    "address": "2259 Cedar Ln",
+    "city_state_zip": "Eugene, OR 97401",
+    "tin_type": "SSN",
+    "tin_last4": "4324",
+    "signed": true,
+    "date_signed": "2026-03-05"
+  },
+  "printed": [
+    "Victor Fairchild",
+    "2259 Cedar Ln",
+    "Eugene, OR 97401",
+    "4324",
+    "Dalton Consulting Services",
+    "03/05/2026"
+  ],
+  "meta": {
+    "layout": "handwritten_font",
+    "condition": "clean",
+    "tricks": [],
+    "full_tin": "987654324"
+  }
+}

@@ -1,0 +1,250 @@
+{
+  "id": "inv-20",
+  "type": "invoice",
+  "file": "inv-20.pdf",
+  "fields": {
+    "vendor_name": "Lanternfish Creative Studio",
+    "vendor_address": "9025 Industrial Pkwy, Suite 294, Tulsa, OK 74103",
+    "invoice_number": "LA-715-52",
+    "invoice_date": "2026-02-25",
+    "due_date": "2026-03-27",
+    "po_number": null,
+    "bill_to_name": "Pinecrest Property Management",
+    "bill_to_address": "8171 Foundry Way, Fresno, CA 93721",
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "Paid ads management fee",
+        "quantity": 1,
+        "unit_price": 772.47,
+        "amount": 772.47
+      },
+      {
+        "description": "Brand strategy workshop",
+        "quantity": 3,
+        "unit_price": 2907.94,
+        "amount": 8723.82
+      },
+      {
+        "description": "Brand strategy workshop",
+        "quantity": 1,
+        "unit_price": 2695.66,
+        "amount": 2695.66
+      },
+      {
+        "description": "Brand strategy workshop",
+        "quantity": 1,
+        "unit_price": 2067.65,
+        "amount": 2067.65
+      },
+      {
+        "description": "Copywriting",
+        "quantity": 10,
+        "unit_price": 97.71,
+        "amount": 977.1
+      },
+      {
+        "description": "Photography session (half day)",
+        "quantity": 1,
+        "unit_price": 1096.93,
+        "amount": 1096.93
+      },
+      {
+        "description": "Copywriting",
+        "quantity": 1,
+        "unit_price": 106.06,
+        "amount": 106.06
+      },
+      {
+        "description": "Brand strategy workshop",
+        "quantity": 1,
+        "unit_price": 1987.87,
+        "amount": 1987.87
+      },
+      {
+        "description": "Photography session (half day)",
+        "quantity": 1,
+        "unit_price": 829.09,
+        "amount": 829.09
+      },
+      {
+        "description": "Social media management - month",
+        "quantity": 1,
+        "unit_price": 1896.73,
+        "amount": 1896.73
+      },
+      {
+        "description": "Paid ads management fee",
+        "quantity": 2,
+        "unit_price": 1449.95,
+        "amount": 2899.9
+      },
+      {
+        "description": "Brand strategy workshop",
+        "quantity": 1,
+        "unit_price": 1355.29,
+        "amount": 1355.29
+      },
+      {
+        "description": "Paid ads management fee",
+        "quantity": 1,
+        "unit_price": 980.2,
+        "amount": 980.2
+      },
+      {
+        "description": "Graphic design",
+        "quantity": 1,
+        "unit_price": 126.42,
+        "amount": 126.42
+      },
+      {
+        "description": "Graphic design",
+        "quantity": 2,
+        "unit_price": 106.51,
+        "amount": 213.02
+      },
+      {
+        "description": "Graphic design",
+        "quantity": 1,
+        "unit_price": 108.01,
+        "amount": 108.01
+      },
+      {
+        "description": "Graphic design",
+        "quantity": 1.5,
+        "unit_price": 105.24,
+        "amount": 157.86
+      },
+      {
+        "description": "Social media management - month",
+        "quantity": 2,
+        "unit_price": 2147.92,
+        "amount": 4295.84
+      },
+      {
+        "description": "Brand strategy workshop",
+        "quantity": 1,
+        "unit_price": 3145.29,
+        "amount": 3145.29
+      },
+      {
+        "description": "Graphic design",
+        "quantity": 3,
+        "unit_price": 116.16,
+        "amount": 348.48
+      },
+      {
+        "description": "Copywriting",
+        "quantity": 10,
+        "unit_price": 89.53,
+        "amount": 895.3
+      },
+      {
+        "description": "Graphic design",
+        "quantity": 4,
+        "unit_price": 98.17,
+        "amount": 392.68
+      },
+      {
+        "description": "Social media management - month",
+        "quantity": 3,
+        "unit_price": 1052.49,
+        "amount": 3157.47
+      },
+      {
+        "description": "Brand strategy workshop",
+        "quantity": 1,
+        "unit_price": 1670.53,
+        "amount": 1670.53
+      },
+      {
+        "description": "Photography session (half day)",
+        "quantity": 2,
+        "unit_price": 1089.35,
+        "amount": 2178.7
+      },
+      {
+        "description": "Social media management - month",
+        "quantity": 1,
+        "unit_price": 2201.44,
+        "amount": 2201.44
+      }
+    ],
+    "subtotal": 45279.81,
+    "discount": null,
+    "tax": 2716.79,
+    "shipping": null,
+    "total": 47996.6,
+    "payment_terms": "Net 30"
+  },
+  "printed": [
+    "Lanternfish Creative Studio",
+    "LA-715-52",
+    "February 25, 2026",
+    "Pinecrest Property Management",
+    "$47,996.60",
+    "March 27, 2026",
+    "$45,279.81",
+    "$2,716.79",
+    "Net 30",
+    "Paid ads management fee",
+    "Brand strategy workshop",
+    "Brand strategy workshop",
+    "Brand strategy workshop",
+    "Copywriting",
+    "Photography session (half day)",
+    "Copywriting",
+    "Brand strategy workshop",
+    "Photography session (half day)",
+    "Social media management - month",
+    "Paid ads management fee",
+    "Brand strategy workshop",
+    "Paid ads management fee",
+    "Graphic design",
+    "Graphic design",
+    "Graphic design",
+    "Graphic design",
+    "Social media management - month",
+    "Brand strategy workshop",
+    "Graphic design",
+    "Copywriting",
+    "Graphic design",
+    "Social media management - month",
+    "Brand strategy workshop",
+    "Photography session (half day)",
+    "Social media management - month",
+    "$772.47",
+    "$8,723.82",
+    "$2,695.66",
+    "$2,067.65",
+    "$977.10",
+    "$1,096.93",
+    "$106.06",
+    "$1,987.87",
+    "$829.09",
+    "$1,896.73",
+    "$2,899.90",
+    "$1,355.29",
+    "$980.20",
+    "$126.42",
+    "$213.02",
+    "$108.01",
+    "$157.86",
+    "$4,295.84",
+    "$3,145.29",
+    "$348.48",
+    "$895.30",
+    "$392.68",
+    "$3,157.47",
+    "$1,670.53",
+    "$2,178.70",
+    "$2,201.44"
+  ],
+  "meta": {
+    "layout": "classic",
+    "condition": "clean",
+    "tricks": [
+      "multi_page"
+    ]
+  }
+}

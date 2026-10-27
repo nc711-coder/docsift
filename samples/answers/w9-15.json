@@ -1,0 +1,31 @@
+{
+  "id": "w9-15",
+  "type": "w9",
+  "file": "w9-15.pdf",
+  "fields": {
+    "name": "Maria Lindqvist",
+    "business_name": "Fairchild Design Corp.",
+    "tax_classification": "s_corporation",
+    "llc_tax_code": null,
+    "address": "5337 Ridge Rd",
+    "city_state_zip": "Eugene, OR 97401",
+    "tin_type": "EIN",
+    "tin_last4": "0466",
+    "signed": true,
+    "date_signed": "2026-05-16"
+  },
+  "printed": [
+    "Maria Lindqvist",
+    "5337 Ridge Rd",
+    "Eugene, OR 97401",
+    "0466",
+    "Fairchild Design Corp.",
+    "05/16/2026"
+  ],
+  "meta": {
+    "layout": "typed",
+    "condition": "clean",
+    "tricks": [],
+    "full_tin": "007500466"
+  }
+}

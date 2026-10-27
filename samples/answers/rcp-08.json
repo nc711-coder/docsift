@@ -1,0 +1,41 @@
+{
+  "id": "rcp-08",
+  "type": "receipt",
+  "file": "rcp-08.pdf",
+  "fields": {
+    "merchant_name": "QUIKFUEL #0882",
+    "merchant_address": "6866 Harbor St, Suite 134, Columbus, OH 43215",
+    "date": "2026-02-27",
+    "time": "19:50",
+    "items": [
+      {
+        "description": "REGULAR UNLEADED",
+        "quantity": 13.207,
+        "amount": 38.7
+      }
+    ],
+    "subtotal": null,
+    "tax": null,
+    "tax_included": true,
+    "tip": null,
+    "total": 38.7,
+    "payment_method": "debit",
+    "card_last4": "0392",
+    "category": "fuel"
+  },
+  "printed": [
+    "QUIKFUEL #0882",
+    "FEB",
+    "38.70",
+    "REGULAR UNLEADED",
+    "38.70",
+    "0392"
+  ],
+  "meta": {
+    "layout": "fuel",
+    "condition": "clean",
+    "tricks": [
+      "tax_included"
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "inv-17",
+  "type": "invoice",
+  "file": "inv-17.jpg",
+  "fields": {
+    "vendor_name": "Copperleaf Tech Partners",
+    "vendor_address": "8545 Industrial Pkwy, Columbus, OH 43215",
+    "invoice_number": "INV-5083",
+    "invoice_date": "2026-01-26",
+    "due_date": "2026-03-12",
+    "po_number": null,
+    "bill_to_name": "Bluewater Veterinary Clinic",
+    "bill_to_address": "2522 Ridge Rd, Fresno, CA 93721",
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "Firewall license renewal (12 months)",
+        "quantity": 2,
+        "unit_price": 730.18,
+        "amount": 1460.36
+      },
+      {
+        "description": "Cloud backup storage 1 TB",
+        "quantity": 4,
+        "unit_price": 24.55,
+        "amount": 98.2
+      },
+      {
+        "description": "Microsoft 365 Business seats",
+        "quantity": 8,
+        "unit_price": 20.68,
+        "amount": 165.44
+      }
+    ],
+    "subtotal": 1724.0,
+    "discount": null,
+    "tax": 137.92,
+    "shipping": null,
+    "total": 1861.92,
+    "payment_terms": "Net 45"
+  },
+  "printed": [
+    "Copperleaf Tech Partners",
+    "INV-5083",
+    "26 Jan 2026",
+    "Bluewater Veterinary Clinic",
+    "$1,861.92",
+    "12 Mar 2026",
+    "$1,724.00",
+    "$137.92",
+    "Net 45",
+    "Firewall license renewal (12 months)",
+    "Cloud backup storage 1 TB",
+    "Microsoft 365 Business seats",
+    "$1,460.36",
+    "$98.20",
+    "$165.44"
+  ],
+  "meta": {
+    "layout": "band",
+    "condition": "photo",
+    "tricks": []
+  }
+}

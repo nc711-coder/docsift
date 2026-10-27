@@ -1,0 +1,98 @@
+{
+  "id": "inv-12",
+  "type": "invoice",
+  "file": "inv-12.pdf",
+  "fields": {
+    "vendor_name": "Lanternfish Creative Studio",
+    "vendor_address": "3393 Cedar Ln, Tulsa, OK 74103",
+    "invoice_number": "2026136",
+    "invoice_date": "2026-05-13",
+    "due_date": "2026-05-28",
+    "po_number": "PO-47636",
+    "bill_to_name": "Redwood Family Law PLLC",
+    "bill_to_address": "9311 Lakeview Blvd, Columbus, OH 43215",
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "Paid ads management fee",
+        "quantity": 1,
+        "unit_price": 1015.07,
+        "amount": 1015.07
+      },
+      {
+        "description": "Brand strategy workshop",
+        "quantity": 2,
+        "unit_price": 1823.01,
+        "amount": 3646.02
+      },
+      {
+        "description": "Brand strategy workshop",
+        "quantity": 3,
+        "unit_price": 1626.09,
+        "amount": 4878.27
+      },
+      {
+        "description": "Social media management - month",
+        "quantity": 2,
+        "unit_price": 2382.6,
+        "amount": 4765.2
+      },
+      {
+        "description": "Photography session (half day)",
+        "quantity": 1,
+        "unit_price": 931.53,
+        "amount": 931.53
+      },
+      {
+        "description": "Copywriting",
+        "quantity": 7.5,
+        "unit_price": 82.48,
+        "amount": 618.6
+      },
+      {
+        "description": "Copywriting",
+        "quantity": 4,
+        "unit_price": 91.86,
+        "amount": 367.44
+      }
+    ],
+    "subtotal": 16222.13,
+    "discount": null,
+    "tax": null,
+    "shipping": null,
+    "total": 16222.13,
+    "payment_terms": "Net 15"
+  },
+  "printed": [
+    "Lanternfish Creative Studio",
+    "2026136",
+    "May 13, 2026",
+    "Redwood Family Law PLLC",
+    "$16,222.13",
+    "May 28, 2026",
+    "PO-47636",
+    "$16,222.13",
+    "Net 15",
+    "Paid ads management fee",
+    "Brand strategy workshop",
+    "Brand strategy workshop",
+    "Social media management - month",
+    "Photography session (half day)",
+    "Copywriting",
+    "Copywriting",
+    "$1,015.07",
+    "$3,646.02",
+    "$4,878.27",
+    "$4,765.20",
+    "$931.53",
+    "$618.60",
+    "$367.44"
+  ],
+  "meta": {
+    "layout": "band",
+    "condition": "clean",
+    "tricks": [
+      "no_tax"
+    ]
+  }
+}

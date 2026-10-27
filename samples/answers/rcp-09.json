@@ -1,0 +1,54 @@
+{
+  "id": "rcp-09",
+  "type": "receipt",
+  "file": "rcp-09.pdf",
+  "fields": {
+    "merchant_name": "DESKPOINT STORE 117",
+    "merchant_address": "6090 Union St, Portland, ME 04101",
+    "date": "2026-08-18",
+    "time": "10:59",
+    "items": [
+      {
+        "description": "BINDER 2IN 4PK",
+        "quantity": 1,
+        "amount": 16.63
+      },
+      {
+        "description": "LABEL MAKER TAPE",
+        "quantity": 1,
+        "amount": 16.61
+      },
+      {
+        "description": "GEL PENS 12PK",
+        "quantity": 3,
+        "amount": 41.49
+      }
+    ],
+    "subtotal": 74.73,
+    "tax": 5.23,
+    "tax_included": false,
+    "tip": null,
+    "total": 79.96,
+    "payment_method": "discover",
+    "card_last4": "2407",
+    "category": "office_supplies"
+  },
+  "printed": [
+    "DESKPOINT STORE 117",
+    "08/18/26",
+    "79.96",
+    "BINDER 2IN 4PK",
+    "LABEL MAKER TAPE",
+    "GEL PENS 12PK",
+    "16.63",
+    "16.61",
+    "41.49",
+    "5.23",
+    "2407"
+  ],
+  "meta": {
+    "layout": "office",
+    "condition": "clean",
+    "tricks": []
+  }
+}

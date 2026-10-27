@@ -1,0 +1,62 @@
+{
+  "id": "rcp-02",
+  "type": "receipt",
+  "file": "rcp-02.pdf",
+  "fields": {
+    "merchant_name": "Harbor Grill & Oyster Bar",
+    "merchant_address": "233 Lakeview Blvd, Madison, WI 53703",
+    "date": "2026-07-22",
+    "time": "16:57",
+    "items": [
+      {
+        "description": "Fish Tacos",
+        "quantity": 1,
+        "amount": 13.94
+      },
+      {
+        "description": "Burger & Fries",
+        "quantity": 1,
+        "amount": 17.09
+      },
+      {
+        "description": "Churros",
+        "quantity": 1,
+        "amount": 6.87
+      },
+      {
+        "description": "Iced Tea",
+        "quantity": 1,
+        "amount": 3.03
+      }
+    ],
+    "subtotal": 40.93,
+    "tax": 3.27,
+    "tax_included": false,
+    "tip": 6.63,
+    "total": 50.83,
+    "payment_method": "visa",
+    "card_last4": "1915",
+    "category": "meals"
+  },
+  "printed": [
+    "Harbor Grill & Oyster Bar",
+    "JUL",
+    "50.83",
+    "Fish Tacos",
+    "Burger & Fries",
+    "Churros",
+    "Iced Tea",
+    "13.94",
+    "17.09",
+    "6.87",
+    "3.03",
+    "6.63",
+    "3.27",
+    "1915"
+  ],
+  "meta": {
+    "layout": "restaurant",
+    "condition": "clean",
+    "tricks": []
+  }
+}

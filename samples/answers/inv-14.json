@@ -1,0 +1,66 @@
+{
+  "id": "inv-14",
+  "type": "invoice",
+  "file": "inv-14.pdf",
+  "fields": {
+    "vendor_name": "Ironside Building Supply",
+    "vendor_address": "2370 Commerce Dr, Fresno, CA 93721",
+    "invoice_number": "IR-626-56",
+    "invoice_date": "2026-10-11",
+    "due_date": "2026-10-26",
+    "po_number": "PO-46664",
+    "bill_to_name": "Harborview Dental Group",
+    "bill_to_address": "577 Ridge Rd, Lansing, MI 48933",
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "Drywall sheet 4x8 1/2in",
+        "quantity": 10,
+        "unit_price": 12.34,
+        "amount": 123.4
+      },
+      {
+        "description": "Drywall sheet 4x8 1/2in",
+        "quantity": 3,
+        "unit_price": 13.29,
+        "amount": 39.87
+      },
+      {
+        "description": "Plywood 3/4in sheet",
+        "quantity": 3,
+        "unit_price": 39.29,
+        "amount": 117.87
+      }
+    ],
+    "subtotal": 281.14,
+    "discount": null,
+    "tax": 16.87,
+    "shipping": 58.6,
+    "total": 356.61,
+    "payment_terms": "Net 15"
+  },
+  "printed": [
+    "Ironside Building Supply",
+    "IR-626-56",
+    "2026-10-11",
+    "Harborview Dental Group",
+    "$356.61",
+    "2026-10-26",
+    "PO-46664",
+    "$281.14",
+    "$16.87",
+    "$58.60",
+    "Net 15",
+    "Drywall sheet 4x8 1/2in",
+    "Drywall sheet 4x8 1/2in",
+    "Plywood 3/4in sheet",
+    "$123.40",
+    "$39.87",
+    "$117.87"
+  ],
+  "meta": {
+    "layout": "remit",
+    "condition": "scan",
+    "tricks": []
+  }
+}

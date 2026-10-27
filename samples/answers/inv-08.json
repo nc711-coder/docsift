@@ -1,0 +1,89 @@
+{
+  "id": "inv-08",
+  "type": "invoice",
+  "file": "inv-08.pdf",
+  "fields": {
+    "vendor_name": "ClearCourse Janitorial LLC",
+    "vendor_address": "2605 Foundry Way, Madison, WI 53703",
+    "invoice_number": "CL-498-52",
+    "invoice_date": "2026-02-27",
+    "due_date": "2026-03-14",
+    "po_number": "PO-40681",
+    "bill_to_name": "Copper Kettle Restaurants",
+    "bill_to_address": "5819 Bridge St, Arlington, VA 22201",
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "Restroom supplies restock",
+        "quantity": 3,
+        "unit_price": 123.63,
+        "amount": 370.89
+      },
+      {
+        "description": "Nightly office cleaning - month",
+        "quantity": 3,
+        "unit_price": 1408.36,
+        "amount": 4225.08
+      },
+      {
+        "description": "Window washing, exterior",
+        "quantity": 1,
+        "unit_price": 213.11,
+        "amount": 213.11
+      },
+      {
+        "description": "Nightly office cleaning - month",
+        "quantity": 3,
+        "unit_price": 1806.81,
+        "amount": 5420.43
+      },
+      {
+        "description": "Window washing, exterior",
+        "quantity": 2,
+        "unit_price": 317.43,
+        "amount": 634.86
+      },
+      {
+        "description": "Restroom supplies restock",
+        "quantity": 3,
+        "unit_price": 103.12,
+        "amount": 309.36
+      }
+    ],
+    "subtotal": 11173.73,
+    "discount": null,
+    "tax": 977.7,
+    "shipping": null,
+    "total": 12151.43,
+    "payment_terms": "Net 15"
+  },
+  "printed": [
+    "ClearCourse Janitorial LLC",
+    "CL-498-52",
+    "2026-02-27",
+    "Copper Kettle Restaurants",
+    "$12,151.43",
+    "2026-03-14",
+    "PO-40681",
+    "$11,173.73",
+    "$977.70",
+    "Net 15",
+    "Restroom supplies restock",
+    "Nightly office cleaning - month",
+    "Window washing, exterior",
+    "Nightly office cleaning - month",
+    "Window washing, exterior",
+    "Restroom supplies restock",
+    "370.89",
+    "4,225.08",
+    "213.11",
+    "5,420.43",
+    "634.86",
+    "309.36"
+  ],
+  "meta": {
+    "layout": "minimal",
+    "condition": "clean",
+    "tricks": []
+  }
+}

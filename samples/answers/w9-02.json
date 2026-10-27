@@ -1,0 +1,31 @@
+{
+  "id": "w9-02",
+  "type": "w9",
+  "file": "w9-02.pdf",
+  "fields": {
+    "name": "Daniel Mbeki",
+    "business_name": "Navarro Bookkeeping Partners",
+    "tax_classification": "partnership",
+    "llc_tax_code": null,
+    "address": "9543 Mill Rd, Suite 380",
+    "city_state_zip": "Boise, ID 83702",
+    "tin_type": "EIN",
+    "tin_last4": "9060",
+    "signed": true,
+    "date_signed": "2026-02-20"
+  },
+  "printed": [
+    "Daniel Mbeki",
+    "9543 Mill Rd, Suite 380",
+    "Boise, ID 83702",
+    "9060",
+    "Navarro Bookkeeping Partners",
+    "02/20/2026"
+  ],
+  "meta": {
+    "layout": "typed",
+    "condition": "clean",
+    "tricks": [],
+    "full_tin": "003459060"
+  }
+}

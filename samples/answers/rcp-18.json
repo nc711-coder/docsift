@@ -1,0 +1,39 @@
+{
+  "id": "rcp-18",
+  "type": "receipt",
+  "file": "rcp-18.jpg",
+  "fields": {
+    "merchant_name": "SUNRISE GAS & GO",
+    "merchant_address": "8680 Summit Ave, Fresno, CA 93721",
+    "date": "2026-08-08",
+    "time": "18:25",
+    "items": [
+      {
+        "description": "REGULAR UNLEADED",
+        "quantity": 10.007,
+        "amount": 32.83
+      }
+    ],
+    "subtotal": null,
+    "tax": null,
+    "tax_included": true,
+    "tip": null,
+    "total": 32.83,
+    "payment_method": "visa",
+    "card_last4": "3043",
+    "category": "fuel"
+  },
+  "printed": [
+    "SUNRISE GAS & GO",
+    "08/08/26",
+    "32.83",
+    "REGULAR UNLEADED",
+    "32.83",
+    "3043"
+  ],
+  "meta": {
+    "layout": "fuel",
+    "condition": "photo",
+    "tricks": []
+  }
+}

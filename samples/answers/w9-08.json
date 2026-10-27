@@ -1,0 +1,31 @@
+{
+  "id": "w9-08",
+  "type": "w9",
+  "file": "w9-08.pdf",
+  "fields": {
+    "name": "Daniel Fairchild",
+    "business_name": "Lindqvist Electric Services",
+    "tax_classification": "individual_sole_proprietor",
+    "llc_tax_code": null,
+    "address": "697 Maple Ave, Suite 209",
+    "city_state_zip": "Tulsa, OK 74103",
+    "tin_type": "SSN",
+    "tin_last4": "4320",
+    "signed": true,
+    "date_signed": "2026-10-10"
+  },
+  "printed": [
+    "Daniel Fairchild",
+    "697 Maple Ave, Suite 209",
+    "Tulsa, OK 74103",
+    "4320",
+    "Lindqvist Electric Services",
+    "October 10, 2026"
+  ],
+  "meta": {
+    "layout": "typed",
+    "condition": "clean",
+    "tricks": [],
+    "full_tin": "987654320"
+  }
+}

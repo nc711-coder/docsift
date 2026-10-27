@@ -1,0 +1,40 @@
+{
+  "id": "rcp-05",
+  "type": "receipt",
+  "file": "rcp-05.jpg",
+  "fields": {
+    "merchant_name": "CITYPARK GARAGE 4",
+    "merchant_address": "4340 Elm St, Savannah, GA 31401",
+    "date": "2026-06-13",
+    "time": "10:47",
+    "items": [
+      {
+        "description": "PARKING 8 HR",
+        "quantity": null,
+        "amount": 38.0
+      }
+    ],
+    "subtotal": null,
+    "tax": 2.15,
+    "tax_included": true,
+    "tip": null,
+    "total": 38.0,
+    "payment_method": "amex",
+    "card_last4": "0557",
+    "category": "travel"
+  },
+  "printed": [
+    "CITYPARK GARAGE 4",
+    "06/13/2026",
+    "38.00",
+    "PARKING 8 HR",
+    "38.00",
+    "2.15",
+    "0557"
+  ],
+  "meta": {
+    "layout": "parking",
+    "condition": "photo",
+    "tricks": []
+  }
+}

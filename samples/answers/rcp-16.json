@@ -1,0 +1,96 @@
+{
+  "id": "rcp-16",
+  "type": "receipt",
+  "file": "rcp-16.pdf",
+  "fields": {
+    "merchant_name": "GREEN BASKET FOODS",
+    "merchant_address": "1515 Foundry Way, Suite 337, Fresno, CA 93721",
+    "date": "2026-06-26",
+    "time": "18:51",
+    "items": [
+      {
+        "description": "EGGS LG DOZEN",
+        "quantity": null,
+        "amount": 4.33
+      },
+      {
+        "description": "EGGS LG DOZEN",
+        "quantity": null,
+        "amount": 3.15
+      },
+      {
+        "description": "APPLES GALA 3LB",
+        "quantity": null,
+        "amount": 5.36
+      },
+      {
+        "description": "WHOLE MILK GAL",
+        "quantity": null,
+        "amount": 4.55
+      },
+      {
+        "description": "CHICKEN BREAST",
+        "quantity": null,
+        "amount": 11.95
+      },
+      {
+        "description": "CHEDDAR 8OZ",
+        "quantity": null,
+        "amount": 5.41
+      },
+      {
+        "description": "SPARKLING WATER 8PK",
+        "quantity": null,
+        "amount": 6.77
+      },
+      {
+        "description": "CHEDDAR 8OZ",
+        "quantity": null,
+        "amount": 4.39
+      },
+      {
+        "description": "DISH SOAP",
+        "quantity": null,
+        "amount": 3.25
+      }
+    ],
+    "subtotal": 49.16,
+    "tax": 0.98,
+    "tax_included": false,
+    "tip": null,
+    "total": 50.14,
+    "payment_method": "amex",
+    "card_last4": "2788",
+    "category": "groceries"
+  },
+  "printed": [
+    "GREEN BASKET FOODS",
+    "JUN",
+    "50.14",
+    "EGGS LG DOZEN",
+    "EGGS LG DOZEN",
+    "APPLES GALA 3LB",
+    "WHOLE MILK GAL",
+    "CHICKEN BREAST",
+    "CHEDDAR 8OZ",
+    "SPARKLING WATER 8PK",
+    "CHEDDAR 8OZ",
+    "DISH SOAP",
+    "4.33",
+    "3.15",
+    "5.36",
+    "4.55",
+    "11.95",
+    "5.41",
+    "6.77",
+    "4.39",
+    "3.25",
+    "0.98",
+    "2788"
+  ],
+  "meta": {
+    "layout": "grocery",
+    "condition": "clean",
+    "tricks": []
+  }
+}

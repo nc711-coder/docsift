@@ -1,0 +1,68 @@
+{
+  "id": "rcp-19",
+  "type": "receipt",
+  "file": "rcp-19.pdf",
+  "fields": {
+    "merchant_name": "PAPERWELL OFFICE SUPPLY",
+    "merchant_address": "2277 Lakeview Blvd, Columbus, OH 43215",
+    "date": "2026-09-23",
+    "time": "18:05",
+    "items": [
+      {
+        "description": "TONER CART 26A",
+        "quantity": 2,
+        "amount": 222.92
+      },
+      {
+        "description": "GEL PENS 12PK",
+        "quantity": 1,
+        "amount": 12.29
+      },
+      {
+        "description": "GEL PENS 12PK",
+        "quantity": 1,
+        "amount": 9.81
+      },
+      {
+        "description": "GEL PENS 12PK",
+        "quantity": 1,
+        "amount": 13.27
+      },
+      {
+        "description": "COPY PAPER CASE",
+        "quantity": 1,
+        "amount": 52.36
+      }
+    ],
+    "subtotal": 310.65,
+    "tax": 21.75,
+    "tax_included": false,
+    "tip": null,
+    "total": 332.4,
+    "payment_method": "mastercard",
+    "card_last4": "7973",
+    "category": "office_supplies"
+  },
+  "printed": [
+    "PAPERWELL OFFICE SUPPLY",
+    "09/23/26",
+    "332.40",
+    "TONER CART 26A",
+    "GEL PENS 12PK",
+    "GEL PENS 12PK",
+    "GEL PENS 12PK",
+    "COPY PAPER CASE",
+    "222.92",
+    "12.29",
+    "9.81",
+    "13.27",
+    "52.36",
+    "21.75",
+    "7973"
+  ],
+  "meta": {
+    "layout": "office",
+    "condition": "clean",
+    "tricks": []
+  }
+}

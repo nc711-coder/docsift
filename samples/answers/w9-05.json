@@ -1,0 +1,32 @@
+{
+  "id": "w9-05",
+  "type": "w9",
+  "file": "w9-05.pdf",
+  "fields": {
+    "name": "Aisha Mbeki",
+    "business_name": "Quinlan Landscaping Inc.",
+    "tax_classification": "c_corporation",
+    "llc_tax_code": null,
+    "address": "425 Orchard St",
+    "city_state_zip": "Fresno, CA 93721",
+    "tin_type": "EIN",
+    "tin_last4": "6261",
+    "signed": false,
+    "date_signed": null
+  },
+  "printed": [
+    "Aisha Mbeki",
+    "425 Orchard St",
+    "Fresno, CA 93721",
+    "6261",
+    "Quinlan Landscaping Inc."
+  ],
+  "meta": {
+    "layout": "typed",
+    "condition": "scan",
+    "tricks": [
+      "unsigned"
+    ],
+    "full_tin": "008836261"
+  }
+}

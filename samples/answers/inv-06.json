@@ -1,0 +1,250 @@
+{
+  "id": "inv-06",
+  "type": "invoice",
+  "file": "inv-06.pdf",
+  "fields": {
+    "vendor_name": "ClearCourse Janitorial LLC",
+    "vendor_address": "9117 Commerce Dr, Suite 235, Lansing, MI 48933",
+    "invoice_number": "CL-655-13",
+    "invoice_date": "2026-08-08",
+    "due_date": "2026-09-07",
+    "po_number": null,
+    "bill_to_name": "Pinecrest Property Management",
+    "bill_to_address": "2818 Industrial Pkwy, Portland, ME 04101",
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "Window washing, exterior",
+        "quantity": 1,
+        "unit_price": 353.37,
+        "amount": 353.37
+      },
+      {
+        "description": "Nightly office cleaning - month",
+        "quantity": 1,
+        "unit_price": 1761.27,
+        "amount": 1761.27
+      },
+      {
+        "description": "Floor strip and wax",
+        "quantity": 800,
+        "unit_price": 0.56,
+        "amount": 448.0
+      },
+      {
+        "description": "Window washing, exterior",
+        "quantity": 1,
+        "unit_price": 218.73,
+        "amount": 218.73
+      },
+      {
+        "description": "Nightly office cleaning - month",
+        "quantity": 1,
+        "unit_price": 923.58,
+        "amount": 923.58
+      },
+      {
+        "description": "Restroom supplies restock",
+        "quantity": 1,
+        "unit_price": 137.23,
+        "amount": 137.23
+      },
+      {
+        "description": "Nightly office cleaning - month",
+        "quantity": 1,
+        "unit_price": 1299.88,
+        "amount": 1299.88
+      },
+      {
+        "description": "Nightly office cleaning - month",
+        "quantity": 3,
+        "unit_price": 1059.58,
+        "amount": 3178.74
+      },
+      {
+        "description": "Floor strip and wax",
+        "quantity": 800,
+        "unit_price": 0.6,
+        "amount": 480.0
+      },
+      {
+        "description": "Window washing, exterior",
+        "quantity": 3,
+        "unit_price": 367.14,
+        "amount": 1101.42
+      },
+      {
+        "description": "Floor strip and wax",
+        "quantity": 1200,
+        "unit_price": 0.36,
+        "amount": 432.0
+      },
+      {
+        "description": "Window washing, exterior",
+        "quantity": 3,
+        "unit_price": 325.87,
+        "amount": 977.61
+      },
+      {
+        "description": "Restroom supplies restock",
+        "quantity": 2,
+        "unit_price": 94.09,
+        "amount": 188.18
+      },
+      {
+        "description": "Window washing, exterior",
+        "quantity": 1,
+        "unit_price": 386.71,
+        "amount": 386.71
+      },
+      {
+        "description": "Restroom supplies restock",
+        "quantity": 10,
+        "unit_price": 83.35,
+        "amount": 833.5
+      },
+      {
+        "description": "Nightly office cleaning - month",
+        "quantity": 2,
+        "unit_price": 2150.16,
+        "amount": 4300.32
+      },
+      {
+        "description": "Nightly office cleaning - month",
+        "quantity": 1,
+        "unit_price": 1378.43,
+        "amount": 1378.43
+      },
+      {
+        "description": "Window washing, exterior",
+        "quantity": 1,
+        "unit_price": 354.51,
+        "amount": 354.51
+      },
+      {
+        "description": "Window washing, exterior",
+        "quantity": 1,
+        "unit_price": 364.29,
+        "amount": 364.29
+      },
+      {
+        "description": "Floor strip and wax",
+        "quantity": 800,
+        "unit_price": 0.58,
+        "amount": 464.0
+      },
+      {
+        "description": "Carpet deep clean",
+        "quantity": 250,
+        "unit_price": 0.32,
+        "amount": 80.0
+      },
+      {
+        "description": "Carpet deep clean",
+        "quantity": 250,
+        "unit_price": 0.33,
+        "amount": 82.5
+      },
+      {
+        "description": "Nightly office cleaning - month",
+        "quantity": 1,
+        "unit_price": 1113.66,
+        "amount": 1113.66
+      },
+      {
+        "description": "Floor strip and wax",
+        "quantity": 800,
+        "unit_price": 0.51,
+        "amount": 408.0
+      },
+      {
+        "description": "Nightly office cleaning - month",
+        "quantity": 1,
+        "unit_price": 1622.11,
+        "amount": 1622.11
+      },
+      {
+        "description": "Window washing, exterior",
+        "quantity": 2,
+        "unit_price": 279.67,
+        "amount": 559.34
+      }
+    ],
+    "subtotal": 23447.38,
+    "discount": null,
+    "tax": 1406.84,
+    "shipping": null,
+    "total": 24854.22,
+    "payment_terms": "Net 30"
+  },
+  "printed": [
+    "ClearCourse Janitorial LLC",
+    "CL-655-13",
+    "August 8, 2026",
+    "Pinecrest Property Management",
+    "$24,854.22",
+    "September 7, 2026",
+    "$23,447.38",
+    "$1,406.84",
+    "Net 30",
+    "Window washing, exterior",
+    "Nightly office cleaning - month",
+    "Floor strip and wax",
+    "Window washing, exterior",
+    "Nightly office cleaning - month",
+    "Restroom supplies restock",
+    "Nightly office cleaning - month",
+    "Nightly office cleaning - month",
+    "Floor strip and wax",
+    "Window washing, exterior",
+    "Floor strip and wax",
+    "Window washing, exterior",
+    "Restroom supplies restock",
+    "Window washing, exterior",
+    "Restroom supplies restock",
+    "Nightly office cleaning - month",
+    "Nightly office cleaning - month",
+    "Window washing, exterior",
+    "Window washing, exterior",
+    "Floor strip and wax",
+    "Carpet deep clean",
+    "Carpet deep clean",
+    "Nightly office cleaning - month",
+    "Floor strip and wax",
+    "Nightly office cleaning - month",
+    "Window washing, exterior",
+    "$353.37",
+    "$1,761.27",
+    "$448.00",
+    "$218.73",
+    "$923.58",
+    "$137.23",
+    "$1,299.88",
+    "$3,178.74",
+    "$480.00",
+    "$1,101.42",
+    "$432.00",
+    "$977.61",
+    "$188.18",
+    "$386.71",
+    "$833.50",
+    "$4,300.32",
+    "$1,378.43",
+    "$354.51",
+    "$364.29",
+    "$464.00",
+    "$80.00",
+    "$82.50",
+    "$1,113.66",
+    "$408.00",
+    "$1,622.11",
+    "$559.34"
+  ],
+  "meta": {
+    "layout": "classic",
+    "condition": "clean",
+    "tricks": [
+      "multi_page"
+    ]
+  }
+}

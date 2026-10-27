@@ -1,0 +1,103 @@
+{
+  "id": "rcp-11",
+  "type": "receipt",
+  "file": "rcp-11.pdf",
+  "fields": {
+    "merchant_name": "VALLEY HARVEST GROCERY",
+    "merchant_address": "7613 Union St, Madison, WI 53703",
+    "date": "2026-03-16",
+    "time": "09:09",
+    "items": [
+      {
+        "description": "WHOLE MILK GAL",
+        "quantity": null,
+        "amount": 4.08
+      },
+      {
+        "description": "SPARKLING WATER 8PK",
+        "quantity": null,
+        "amount": 6.11
+      },
+      {
+        "description": "PAPER TOWELS 6PK",
+        "quantity": null,
+        "amount": 8.66
+      },
+      {
+        "description": "SOURDOUGH LOAF",
+        "quantity": null,
+        "amount": 6.36
+      },
+      {
+        "description": "SPINACH 5OZ",
+        "quantity": null,
+        "amount": 3.07
+      },
+      {
+        "description": "DISH SOAP",
+        "quantity": null,
+        "amount": 3.8
+      },
+      {
+        "description": "SPARKLING WATER 8PK",
+        "quantity": null,
+        "amount": 6.97
+      },
+      {
+        "description": "CHICKEN BREAST",
+        "quantity": null,
+        "amount": 6.81
+      },
+      {
+        "description": "CHICKEN BREAST",
+        "quantity": null,
+        "amount": 8.67
+      },
+      {
+        "description": "CHEDDAR 8OZ",
+        "quantity": null,
+        "amount": 5.07
+      }
+    ],
+    "subtotal": 59.6,
+    "tax": 1.19,
+    "tax_included": false,
+    "tip": null,
+    "total": 60.79,
+    "payment_method": "discover",
+    "card_last4": "0557",
+    "category": "groceries"
+  },
+  "printed": [
+    "VALLEY HARVEST GROCERY",
+    "03/16/26",
+    "60.79",
+    "WHOLE MILK GAL",
+    "SPARKLING WATER 8PK",
+    "PAPER TOWELS 6PK",
+    "SOURDOUGH LOAF",
+    "SPINACH 5OZ",
+    "DISH SOAP",
+    "SPARKLING WATER 8PK",
+    "CHICKEN BREAST",
+    "CHICKEN BREAST",
+    "CHEDDAR 8OZ",
+    "4.08",
+    "6.11",
+    "8.66",
+    "6.36",
+    "3.07",
+    "3.80",
+    "6.97",
+    "6.81",
+    "8.67",
+    "5.07",
+    "1.19",
+    "0557"
+  ],
+  "meta": {
+    "layout": "grocery",
+    "condition": "clean",
+    "tricks": []
+  }
+}

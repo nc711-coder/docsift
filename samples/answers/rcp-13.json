@@ -1,0 +1,40 @@
+{
+  "id": "rcp-13",
+  "type": "receipt",
+  "file": "rcp-13.pdf",
+  "fields": {
+    "merchant_name": "SUNRISE GAS & GO",
+    "merchant_address": "1337 Foundry Way, Eugene, OR 97401",
+    "date": "2026-01-15",
+    "time": "13:29",
+    "items": [
+      {
+        "description": "REGULAR UNLEADED",
+        "quantity": 11.984,
+        "amount": 40.87
+      }
+    ],
+    "subtotal": null,
+    "tax": null,
+    "tax_included": true,
+    "tip": null,
+    "total": 40.87,
+    "payment_method": "cash",
+    "card_last4": null,
+    "category": "fuel"
+  },
+  "printed": [
+    "SUNRISE GAS & GO",
+    "JAN",
+    "40.87",
+    "REGULAR UNLEADED",
+    "40.87"
+  ],
+  "meta": {
+    "layout": "fuel",
+    "condition": "clean",
+    "tricks": [
+      "cash"
+    ]
+  }
+}

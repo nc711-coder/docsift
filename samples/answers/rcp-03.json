@@ -1,0 +1,39 @@
+{
+  "id": "rcp-03",
+  "type": "receipt",
+  "file": "rcp-03.pdf",
+  "fields": {
+    "merchant_name": "SUNRISE GAS & GO",
+    "merchant_address": "7505 Cedar Ln, Columbus, OH 43215",
+    "date": "2026-09-26",
+    "time": "21:40",
+    "items": [
+      {
+        "description": "REGULAR UNLEADED",
+        "quantity": 9.212,
+        "amount": 35.71
+      }
+    ],
+    "subtotal": null,
+    "tax": null,
+    "tax_included": true,
+    "tip": null,
+    "total": 35.71,
+    "payment_method": "visa",
+    "card_last4": "5599",
+    "category": "fuel"
+  },
+  "printed": [
+    "SUNRISE GAS & GO",
+    "09/26/2026",
+    "35.71",
+    "REGULAR UNLEADED",
+    "35.71",
+    "5599"
+  ],
+  "meta": {
+    "layout": "fuel",
+    "condition": "scan",
+    "tricks": []
+  }
+}

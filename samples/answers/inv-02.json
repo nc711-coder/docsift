@@ -1,0 +1,72 @@
+{
+  "id": "inv-02",
+  "type": "invoice",
+  "file": "inv-02.pdf",
+  "fields": {
+    "vendor_name": "Staplewood Business Products",
+    "vendor_address": "163 Maple Ave, Suite 405, Raleigh, NC 27601",
+    "invoice_number": "2026962",
+    "invoice_date": "2026-04-08",
+    "due_date": "2026-05-23",
+    "po_number": null,
+    "bill_to_name": "Copper Kettle Restaurants",
+    "bill_to_address": "8032 Elm St, Eugene, OR 97401",
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "Shipping labels, 1000 ct",
+        "quantity": 24,
+        "unit_price": 30.53,
+        "amount": 732.72
+      },
+      {
+        "description": "Desk organizer set",
+        "quantity": 1,
+        "unit_price": 26.93,
+        "amount": 26.93
+      },
+      {
+        "description": "Filing cabinet, 3-drawer",
+        "quantity": 1,
+        "unit_price": 191.67,
+        "amount": 191.67
+      },
+      {
+        "description": "Shipping labels, 1000 ct",
+        "quantity": 5,
+        "unit_price": 33.65,
+        "amount": 168.25
+      }
+    ],
+    "subtotal": 1119.57,
+    "discount": null,
+    "tax": 89.57,
+    "shipping": null,
+    "total": 1209.14,
+    "payment_terms": "Net 45"
+  },
+  "printed": [
+    "Staplewood Business Products",
+    "2026962",
+    "2026-04-08",
+    "Copper Kettle Restaurants",
+    "$1,209.14",
+    "2026-05-23",
+    "$1,119.57",
+    "$89.57",
+    "Net 45",
+    "Shipping labels, 1000 ct",
+    "Desk organizer set",
+    "Filing cabinet, 3-drawer",
+    "Shipping labels, 1000 ct",
+    "$732.72",
+    "$26.93",
+    "$191.67",
+    "$168.25"
+  ],
+  "meta": {
+    "layout": "band",
+    "condition": "clean",
+    "tricks": []
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "w9-20",
+  "type": "w9",
+  "file": "w9-20.pdf",
+  "fields": {
+    "name": "Marcus Fairchild",
+    "business_name": "Fairchild Consulting Cooperative",
+    "tax_classification": "other",
+    "llc_tax_code": null,
+    "address": "6726 Cedar Ln",
+    "city_state_zip": "Tulsa, OK 74103",
+    "tin_type": "EIN",
+    "tin_last4": "7822",
+    "signed": true,
+    "date_signed": "2026-09-16"
+  },
+  "printed": [
+    "Marcus Fairchild",
+    "6726 Cedar Ln",
+    "Tulsa, OK 74103",
+    "7822",
+    "Fairchild Consulting Cooperative",
+    "09/16/2026"
+  ],
+  "meta": {
+    "layout": "typed",
+    "condition": "clean",
+    "tricks": [],
+    "full_tin": "009937822"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "inv-19",
+  "type": "invoice",
+  "file": "inv-19.pdf",
+  "fields": {
+    "vendor_name": "Paperwell Office Supply Co.",
+    "vendor_address": "4261 Industrial Pkwy, Tulsa, OK 74103",
+    "invoice_number": "2026479",
+    "invoice_date": "2026-07-28",
+    "due_date": "2026-08-27",
+    "po_number": "PO-42134",
+    "bill_to_name": "Meridian Physical Therapy",
+    "bill_to_address": "8981 Foundry Way, Tempe, AZ 85281",
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "Ergonomic office chair",
+        "quantity": 1,
+        "unit_price": 299.15,
+        "amount": 299.15
+      },
+      {
+        "description": "Sticky notes, 24 pads",
+        "quantity": 12,
+        "unit_price": 12.83,
+        "amount": 153.96
+      },
+      {
+        "description": "Shipping labels, 1000 ct",
+        "quantity": 1,
+        "unit_price": 25.22,
+        "amount": 25.22
+      },
+      {
+        "description": "Copy paper, letter, 10 reams",
+        "quantity": 2,
+        "unit_price": 48.62,
+        "amount": 97.24
+      },
+      {
+        "description": "Shipping labels, 1000 ct",
+        "quantity": 3,
+        "unit_price": 33.45,
+        "amount": 100.35
+      },
+      {
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 4,
+        "unit_price": 10.66,
+        "amount": 42.64
+      }
+    ],
+    "subtotal": 718.56,
+    "discount": null,
+    "tax": 62.87,
+    "shipping": null,
+    "total": 781.43,
+    "payment_terms": "Net 30"
+  },
+  "printed": [
+    "Paperwell Office Supply Co.",
+    "2026479",
+    "2026-07-28",
+    "Meridian Physical Therapy",
+    "$781.43",
+    "2026-08-27",
+    "PO-42134",
+    "$718.56",
+    "$62.87",
+    "Net 30",
+    "Ergonomic office chair",
+    "Sticky notes, 24 pads",
+    "Shipping labels, 1000 ct",
+    "Copy paper, letter, 10 reams",
+    "Shipping labels, 1000 ct",
+    "Ballpoint pens, box of 50",
+    "$299.15",
+    "$153.96",
+    "$25.22",
+    "$97.24",
+    "$100.35",
+    "$42.64"
+  ],
+  "meta": {
+    "layout": "remit",
+    "condition": "clean",
+    "tricks": []
+  }
+}

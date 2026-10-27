@@ -1,0 +1,69 @@
+{
+  "id": "rcp-12",
+  "type": "receipt",
+  "file": "rcp-12.jpg",
+  "fields": {
+    "merchant_name": "The Copper Spoon",
+    "merchant_address": "7454 Lakeview Blvd, Raleigh, NC 27601",
+    "date": "2026-02-26",
+    "time": "10:19",
+    "items": [
+      {
+        "description": "Clam Chowder",
+        "quantity": 1,
+        "amount": 7.9
+      },
+      {
+        "description": "Fish Tacos",
+        "quantity": 1,
+        "amount": 14.16
+      },
+      {
+        "description": "Grilled Salmon",
+        "quantity": 1,
+        "amount": 28.13
+      },
+      {
+        "description": "Iced Tea",
+        "quantity": 2,
+        "amount": 6.02
+      },
+      {
+        "description": "Clam Chowder",
+        "quantity": 1,
+        "amount": 7.08
+      }
+    ],
+    "subtotal": 63.29,
+    "tax": 5.06,
+    "tax_included": false,
+    "tip": 12.3,
+    "total": 80.65,
+    "payment_method": "visa",
+    "card_last4": "4145",
+    "category": "meals"
+  },
+  "printed": [
+    "The Copper Spoon",
+    "FEB",
+    "80.65",
+    "Clam Chowder",
+    "Fish Tacos",
+    "Grilled Salmon",
+    "Iced Tea",
+    "Clam Chowder",
+    "7.90",
+    "14.16",
+    "28.13",
+    "6.02",
+    "7.08",
+    "12.30",
+    "5.06",
+    "4145"
+  ],
+  "meta": {
+    "layout": "restaurant",
+    "condition": "photo",
+    "tricks": []
+  }
+}

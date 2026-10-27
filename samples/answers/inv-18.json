@@ -1,0 +1,66 @@
+{
+  "id": "inv-18",
+  "type": "invoice",
+  "file": "inv-18.pdf",
+  "fields": {
+    "vendor_name": "Sparkfield Commercial Cleaning",
+    "vendor_address": "2798 Mill Rd, Eugene, OR 97401",
+    "invoice_number": "SP-558-80",
+    "invoice_date": "2026-04-26",
+    "due_date": null,
+    "po_number": "PO-47650",
+    "bill_to_name": "Pinecrest Property Management",
+    "bill_to_address": "6826 Lakeview Blvd, Columbus, OH 43215",
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "Carpet deep clean",
+        "quantity": 400,
+        "unit_price": 0.23,
+        "amount": 92.0
+      },
+      {
+        "description": "Floor strip and wax",
+        "quantity": 800,
+        "unit_price": 0.42,
+        "amount": 336.0
+      },
+      {
+        "description": "Nightly office cleaning - month",
+        "quantity": 1,
+        "unit_price": 1334.1,
+        "amount": 1334.1
+      }
+    ],
+    "subtotal": 1762.1,
+    "discount": null,
+    "tax": null,
+    "shipping": null,
+    "total": 1762.1,
+    "payment_terms": "Due on receipt"
+  },
+  "printed": [
+    "Sparkfield Commercial Cleaning",
+    "SP-558-80",
+    "2026-04-26",
+    "Pinecrest Property Management",
+    "$1,762.10",
+    "PO-47650",
+    "$1,762.10",
+    "Due on receipt",
+    "Carpet deep clean",
+    "Floor strip and wax",
+    "Nightly office cleaning - month",
+    "92.00",
+    "336.00",
+    "1,334.10"
+  ],
+  "meta": {
+    "layout": "minimal",
+    "condition": "scan",
+    "tricks": [
+      "due_on_receipt",
+      "no_tax"
+    ]
+  }
+}

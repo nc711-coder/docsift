@@ -1,0 +1,31 @@
+{
+  "id": "w9-04",
+  "type": "w9",
+  "file": "w9-04.pdf",
+  "fields": {
+    "name": "Yuki Alvarez",
+    "business_name": "Fairchild Consulting LLC",
+    "tax_classification": "llc",
+    "llc_tax_code": "P",
+    "address": "5093 Commerce Dr",
+    "city_state_zip": "Fresno, CA 93721",
+    "tin_type": "EIN",
+    "tin_last4": "0242",
+    "signed": true,
+    "date_signed": "2026-01-18"
+  },
+  "printed": [
+    "Yuki Alvarez",
+    "5093 Commerce Dr",
+    "Fresno, CA 93721",
+    "0242",
+    "Fairchild Consulting LLC",
+    "January 18, 2026"
+  ],
+  "meta": {
+    "layout": "handwritten_font",
+    "condition": "clean",
+    "tricks": [],
+    "full_tin": "003250242"
+  }
+}

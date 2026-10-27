@@ -1,0 +1,40 @@
+{
+  "id": "rcp-20",
+  "type": "receipt",
+  "file": "rcp-20.pdf",
+  "fields": {
+    "merchant_name": "CITYPARK GARAGE 4",
+    "merchant_address": "6885 Industrial Pkwy, Eugene, OR 97401",
+    "date": "2026-03-07",
+    "time": "09:52",
+    "items": [
+      {
+        "description": "PARKING 3 HR",
+        "quantity": null,
+        "amount": 18.0
+      }
+    ],
+    "subtotal": null,
+    "tax": 1.02,
+    "tax_included": true,
+    "tip": null,
+    "total": 18.0,
+    "payment_method": "amex",
+    "card_last4": "8011",
+    "category": "travel"
+  },
+  "printed": [
+    "CITYPARK GARAGE 4",
+    "MAR",
+    "18.00",
+    "PARKING 3 HR",
+    "18.00",
+    "1.02",
+    "8011"
+  ],
+  "meta": {
+    "layout": "parking",
+    "condition": "clean",
+    "tricks": []
+  }
+}

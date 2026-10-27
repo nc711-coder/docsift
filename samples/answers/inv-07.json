@@ -1,0 +1,88 @@
+{
+  "id": "inv-07",
+  "type": "invoice",
+  "file": "inv-07.pdf",
+  "fields": {
+    "vendor_name": "Brightline IT Services LLC",
+    "vendor_address": "8878 Mill Rd, Raleigh, NC 27601",
+    "invoice_number": "2026575",
+    "invoice_date": "2026-07-28",
+    "due_date": "2026-08-27",
+    "po_number": null,
+    "bill_to_name": "Bluewater Veterinary Clinic",
+    "bill_to_address": "9738 Industrial Pkwy, Tempe, AZ 85281",
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "Managed IT support - monthly",
+        "quantity": 3,
+        "unit_price": 1327.79,
+        "amount": 3983.37
+      },
+      {
+        "description": "Help desk tickets (overage)",
+        "quantity": 15,
+        "unit_price": 41.63,
+        "amount": 624.45
+      },
+      {
+        "description": "Microsoft 365 Business seats",
+        "quantity": 8,
+        "unit_price": 19.67,
+        "amount": 157.36
+      },
+      {
+        "description": "Managed IT support - monthly",
+        "quantity": 1,
+        "unit_price": 1338.12,
+        "amount": 1338.12
+      },
+      {
+        "description": "Cloud backup storage 1 TB",
+        "quantity": 24,
+        "unit_price": 44.41,
+        "amount": 1065.84
+      },
+      {
+        "description": "Managed IT support - monthly",
+        "quantity": 3,
+        "unit_price": 1759.76,
+        "amount": 5279.28
+      }
+    ],
+    "subtotal": 12448.42,
+    "discount": null,
+    "tax": 746.91,
+    "shipping": null,
+    "total": 13195.33,
+    "payment_terms": "Net 30"
+  },
+  "printed": [
+    "Brightline IT Services LLC",
+    "2026575",
+    "28 Jul 2026",
+    "Bluewater Veterinary Clinic",
+    "$13,195.33",
+    "27 Aug 2026",
+    "$12,448.42",
+    "$746.91",
+    "Net 30",
+    "Managed IT support - monthly",
+    "Help desk tickets (overage)",
+    "Microsoft 365 Business seats",
+    "Managed IT support - monthly",
+    "Cloud backup storage 1 TB",
+    "Managed IT support - monthly",
+    "$3,983.37",
+    "$624.45",
+    "$157.36",
+    "$1,338.12",
+    "$1,065.84",
+    "$5,279.28"
+  ],
+  "meta": {
+    "layout": "band",
+    "condition": "clean",
+    "tricks": []
+  }
+}

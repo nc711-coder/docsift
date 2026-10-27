@@ -1,0 +1,31 @@
+{
+  "id": "w9-06",
+  "type": "w9",
+  "file": "w9-06.pdf",
+  "fields": {
+    "name": "Caleb Okafor",
+    "business_name": "Kowalski Consulting Services",
+    "tax_classification": "individual_sole_proprietor",
+    "llc_tax_code": null,
+    "address": "905 Bridge St, Suite 218",
+    "city_state_zip": "Eugene, OR 97401",
+    "tin_type": "SSN",
+    "tin_last4": "4327",
+    "signed": true,
+    "date_signed": "2026-03-19"
+  },
+  "printed": [
+    "Caleb Okafor",
+    "905 Bridge St, Suite 218",
+    "Eugene, OR 97401",
+    "4327",
+    "Kowalski Consulting Services",
+    "March 19, 2026"
+  ],
+  "meta": {
+    "layout": "typed",
+    "condition": "clean",
+    "tricks": [],
+    "full_tin": "987654327"
+  }
+}
