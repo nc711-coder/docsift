@@ -16,13 +16,26 @@ Conventions, so answers compare cleanly:
 from __future__ import annotations
 
 import datetime as dt
+import re
 from datetime import date
 from enum import Enum
 from typing import Literal
 
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel as _PydanticModel, Field, field_validator
 
 DOC_TYPES = ("invoice", "receipt", "w9")
+
+
+class BaseModel(_PydanticModel):
+    """Text copied from a page can span lines ("7454 Lakeview Blvd\\nRaleigh, NC 27601"). A line break shows up
+    as nothing in the review page's one-line boxes and in a Sheet cell ("BlvdRaleigh"), so it becomes ", "."""
+
+    @field_validator("*", mode="before")
+    @classmethod
+    def _one_line(cls, v):
+        if isinstance(v, str) and "\n" in v:
+            v = re.sub(r"\s*,?\s*\n\s*,?\s*", ", ", v.strip())
+        return v
 
 
 def _money(v):
