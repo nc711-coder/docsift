@@ -32,7 +32,7 @@ gcloud run deploy docsift `
   --memory 2Gi --cpu 1 `
   --min-instances 0 --max-instances 1 `
   --concurrency 4 --timeout 120 `
-  --cpu-boost `
+  --cpu-boost --no-cpu-throttling `
   --env-vars-file deploy.env.yaml
 ```
 The first build takes about 5 minutes (it installs Tesseract into the image). It ends with
@@ -42,6 +42,7 @@ The first build takes about 5 minutes (it installs Tesseract into the image). It
 | --- | --- |
 | `--concurrency 4` | OCR keeps the CPU busy for a few seconds per scan; 4 at once is plenty on 1 CPU. |
 | `--max-instances 1` | Caps cost, and keeps the upload limits accurate (they're counted in memory). |
+| `--no-cpu-throttling` | The Sheet row and review email are sent in the background after the page has its answer. Without this, Cloud Run freezes the CPU as soon as the answer is sent, and they never leave. |
 | `--min-instances 0` | Free while idle; the first visit after a pause takes ~20 s to wake up. |
 
 ## 3. Check it

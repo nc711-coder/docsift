@@ -120,3 +120,11 @@ def test_digits_in_boxes_are_read():
             x += 64
         x += 50
     assert _boxed_digits(np.asarray(img)) == ["987 65 4321 (3+2+4 digits: SSN layout)"]
+
+
+@needs_ocr
+def test_scanned_tax_id_boxes_read_box_by_box():
+    # Read as one line, this scan's EIN came out "00 62762" (two digits dropped) and the wrong last 4 was
+    # extracted. Each box is now read on its own.
+    r = read(ROOT / "samples" / "docs" / "w9-16.pdf")
+    assert "[digits in boxes] 00 3627627 (2+7 digits: EIN layout)" in r.text

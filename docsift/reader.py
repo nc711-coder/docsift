@@ -353,23 +353,47 @@ def _boxed_digits(gray: np.ndarray) -> list[str]:
         else:
             rows.append([b])
     tess = _tesseract()
+    digit_only = "-c tessedit_char_whitelist=0123456789"
     out = []
     for row in rows:
         if len(row) < 4:
             continue
         row.sort()
         h = max(b[3] for b in row)
-        strip, groups = [], []
+        strip, cells, gaps = [], [], []
         for i, (x, y, w, hh) in enumerate(row):
             m = max(3, int(0.18 * min(w, hh)))                 # stay clear of the box's border
-            cell = gray[y + m:y + hh - m, x + m:x + w - m]
-            cell = cv2.copyMakeBorder(cell, m, h - hh + m, m, m, cv2.BORDER_CONSTANT, value=255)
-            if i and x - (row[i - 1][0] + row[i - 1][2]) > 0.4 * w:
+            inside = gray[y + m:y + hh - m, x + m:x + w - m]
+            gaps.append(bool(i) and x - (row[i - 1][0] + row[i - 1][2]) > 0.4 * w)
+            cells.append(inside)
+            cell = cv2.copyMakeBorder(inside, m, h - hh + m, m, m, cv2.BORDER_CONSTANT, value=255)
+            if gaps[-1]:
                 strip.append(np.full((cell.shape[0], int(1.2 * w)), 255, np.uint8))   # a gap between groups
             strip.append(cell)
             strip.append(np.full((cell.shape[0], int(0.3 * w)), 255, np.uint8))
+
+        # Box by box first: read as one line, Tesseract sometimes merges or drops digits ("003627627" read as
+        # "00 62762" on a scan). Each inked box must give exactly one digit, or this way isn't trusted.
+        groups, ok = [""], True
+        for inside, gap in zip(cells, gaps):
+            if gap:
+                groups.append("")
+            if (inside < 128).mean() < 0.02:                   # an empty box
+                continue
+            img = cv2.copyMakeBorder(inside, 20, 20, 20, 20, cv2.BORDER_CONSTANT, value=255)
+            d = tess.image_to_string(img, config=f"--oem 1 --psm 10 {digit_only}").strip()
+            if len(d) != 1:
+                ok = False
+                break
+            groups[-1] += d
+        groups = [g for g in groups if g]
+        if ok and sum(map(len, groups)) >= len(row) / 2:
+            out.append(box_layout(groups))
+            continue
+
+        # Otherwise the whole row as one line.
         img = cv2.copyMakeBorder(np.hstack(strip), 20, 20, 20, 20, cv2.BORDER_CONSTANT, value=255)
-        digits = tess.image_to_string(img, config="--oem 1 --psm 7 -c tessedit_char_whitelist=0123456789").strip()
+        digits = tess.image_to_string(img, config=f"--oem 1 --psm 7 {digit_only}").strip()
         if sum(ch.isdigit() for ch in digits) >= len(row) / 2:      # mostly empty: checkboxes, not digits
             out.append(box_layout(digits.split()))
     return out
