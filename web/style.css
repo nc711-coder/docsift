@@ -115,6 +115,10 @@ main { width: 100%; max-width: 1180px; margin: 0 auto; padding: 24px 16px 40px; 
 .row.rough input, .row.rough select { border-color: var(--mid); }
 .row .why { grid-column: 2 / 4; font-size: 12.5px; color: var(--bad); margin-top: -2px; }
 .row.rough .why { color: var(--mid); }
+.row .masked { display: flex; align-items: center; gap: 4px; min-width: 0; }
+.row .masked .mask { font-family: var(--mono); color: var(--muted); letter-spacing: 1px; white-space: nowrap; }
+.row .masked input { font-family: var(--mono); flex: 1; min-width: 0; }
+.row .note { grid-column: 2 / 4; font-size: 12.5px; color: var(--muted); margin-top: -2px; }
 .row input[type=checkbox] { width: 20px; height: 20px; min-height: 0; }
 .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--line); }
 .dot.good { background: var(--good); } .dot.mid { background: var(--mid); } .dot.bad { background: var(--bad); }

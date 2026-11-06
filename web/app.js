@@ -227,9 +227,14 @@
         var f = spec[name];
         if (!f) return;
         fs.appendChild(f.kind === "rows" ? rowsTable(f, fields[name] || [], probs[name]) :
-          fieldRow(f, fields[name], confidence[name], probs[name]));
+          fieldRow(f, fields[name], confidence[name], probs[name], fields));
       });
       box.appendChild(fs);
+    });
+    var tinType = document.getElementById("f-tin_type");     // keep the masked tax ID's shape in step with its type
+    if (tinType) tinType.addEventListener("change", function () {
+      var m = document.querySelector(".masked .mask");
+      if (m) m.textContent = tinMask(tinType.value);
     });
     var editable = doc.status !== "failed" && doc.type !== "other";
     document.getElementById("r-approve").hidden = !editable;
@@ -237,7 +242,12 @@
     document.getElementById("r-approve").textContent = doc.status === "approved" ? "Save changes" : "Approve";
   }
 
-  function fieldRow(f, value, conf, probs) {
+  // A tax ID is never stored in full: show the hidden part as dots in its usual shape, the last 4 as the field.
+  function tinMask(type) {
+    return type === "EIN" ? "••-•••" : type === "SSN" ? "•••-••-" : "•••••";
+  }
+
+  function fieldRow(f, value, conf, probs, fields) {
     var id = "f-" + f.name, input;
     if (f.kind === "choice") {
       input = el("select", { id: id, name: f.name }, [el("option", { value: "", text: "—" })].concat(
@@ -251,14 +261,23 @@
                             value: value == null ? "" : f.kind === "money" ? Number(value).toFixed(2) : value });
     }
     input.dataset.kind = f.kind;
+    var shown = input, note = null;
+    if (f.name === "tin_last4") {
+      input.setAttribute("maxlength", "4");
+      input.setAttribute("inputmode", "numeric");
+      shown = el("div", { class: "masked" }, [
+        el("span", { class: "mask", "aria-hidden": "true", text: tinMask(fields && fields.tin_type) }), input]);
+      note = el("div", { class: "note", text: "Full number never stored: only the last 4 digits are kept." });
+    }
     var errs = (probs || []).filter(function (p) { return p.severity === "error"; });
     var warns = (probs || []).filter(function (p) { return p.severity !== "error"; });
     var level = errs.length ? "bad" : (warns.length || (conf != null && conf < 0.9)) ? "mid" : conf == null ? "" : "good";
     var row = el("div", { class: "row " + (f.kind === "money" ? "money " : "") + (errs.length ? "doubt" : warns.length ? "rough" : "") }, [
       el("label", { for: id }, [f.label, f.required ? el("span", { class: "req", text: " *" }) : null]),
-      input,
+      shown,
       el("span", { class: "dot " + level, title: conf == null ? "" : "confidence " + Math.round(conf * 100) + "%" })]);
     (errs.concat(warns)).forEach(function (p) { row.appendChild(el("div", { class: "why", text: p.problem })); });
+    if (note) row.appendChild(note);
     return row;
   }
 
